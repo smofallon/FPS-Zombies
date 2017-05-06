@@ -576,7 +576,7 @@ public:
 		{
 			possible_position.x -= forward.x * speed;
 			possible_position.z -= forward.z * speed;
-			//possible_position.y -= forward.y * speed;
+			possible_position.y -= forward.y * speed;
 		}
 		if (sprinting)
 		{

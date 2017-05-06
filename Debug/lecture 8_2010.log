@@ -126,62 +126,62 @@ c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(205): warning C40
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(214): warning C4018: '<': signed/unsigned mismatch
 c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(112): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(148): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(723): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(716): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(716): warning C4100: 'y': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(716): warning C4100: 'x': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(716): warning C4100: 'fDoubleClick': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(716): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(742): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(742): warning C4100: 'y': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(742): warning C4100: 'x': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(742): warning C4100: 'fDoubleClick': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(742): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(749): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(749): warning C4100: 'ch': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(749): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(756): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(756): warning C4100: 'y': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(756): warning C4100: 'x': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(756): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(764): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(764): warning C4100: 'y': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(764): warning C4100: 'x': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(764): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(806): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(807): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(823): warning C4100: 'lpCreateStruct': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(840): warning C4100: 'id': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(693): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(686): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(686): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(686): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(686): warning C4100: 'fDoubleClick': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(686): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(712): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(712): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(712): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(712): warning C4100: 'fDoubleClick': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(712): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(719): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(719): warning C4100: 'ch': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(719): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(726): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(726): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(726): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(726): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(734): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(734): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(734): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(734): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(776): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(777): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(793): warning C4100: 'lpCreateStruct': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(810): warning C4100: 'id': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(810): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(814): warning C4100: 'flags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(814): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(814): warning C4100: 'fDown': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(814): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(840): warning C4100: 'flags': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(840): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(840): warning C4100: 'fDown': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(840): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(844): warning C4100: 'flags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(844): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(844): warning C4100: 'fDown': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(844): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(870): warning C4100: 'flags': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(870): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(870): warning C4100: 'fDown': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(870): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1016): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1024): warning C4018: '<': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1043): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1094): warning C4459: declaration of 'ammodrop' hides global declaration
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(986): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(994): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1013): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1064): warning C4459: declaration of 'ammodrop' hides global declaration
   c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(38): note: see declaration of 'ammodrop'
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1097): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1169): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1211): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1215): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1192): warning C4100: 'y': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1192): warning C4100: 'x': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1242): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1313): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1350): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1349): warning C4189: 'stride': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1394): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1411): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1455): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1463): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1473): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1400): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1399): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1067): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1139): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1181): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1185): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1162): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1162): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1212): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1283): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1320): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1319): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1364): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1381): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1441): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1449): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1459): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1370): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\homework 4.cpp(1369): warning C4189: 'stride': local variable is initialized but not referenced
   lecture 8_2010.vcxproj -> C:\Users\Sean\Desktop\School\CST320_Final_Proj_Shooter\Debug\homework 4.exe
   lecture 8_2010.vcxproj -> C:\Users\Sean\Desktop\School\CST320_Final_Proj_Shooter\Debug\homework 4.pdb (Full PDB)

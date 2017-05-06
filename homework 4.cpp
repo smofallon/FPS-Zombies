@@ -604,56 +604,26 @@ HRESULT InitDevice()
 	g_pd3dDevice->CreateDepthStencilState(&DS_OFF, &ds_off);
 
 	level1.init("level1.bmp");
-	level1.init_texture(g_pd3dDevice, L"wall1.jpg");
-	level1.init_texture(g_pd3dDevice, L"wall2.jpg");
-	level1.init_texture(g_pd3dDevice, L"floor.jpg");
-	level1.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	level1.make_big_level_object(g_pd3dDevice);
-
-	/*
+	
 	bottom.init("Bottom.bmp");
-	bottom.init_texture(g_pd3dDevice, L"wall1.jpg");
-	bottom.init_texture(g_pd3dDevice, L"wall2.jpg");
-	bottom.init_texture(g_pd3dDevice, L"floor.jpg");
-	bottom.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	bottom.make_big_level_object(g_pd3dDevice);
-
+	
 	top.init("Top.bmp");
-	top.init_texture(g_pd3dDevice, L"wall1.jpg");
-	top.init_texture(g_pd3dDevice, L"wall2.jpg");
-	top.init_texture(g_pd3dDevice, L"floor.jpg");
-	top.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	top.make_big_level_object(g_pd3dDevice);
 
-
 	rightSide.init("Right.bmp");
-	rightSide.init_texture(g_pd3dDevice, L"wall1.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"wall2.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"floor.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	rightSide.make_big_level_object(g_pd3dDevice);
 
 	leftSide.init("Left.bmp");
-	leftSide.init_texture(g_pd3dDevice, L"wall1.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"wall2.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"floor.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	leftSide.make_big_level_object(g_pd3dDevice);
 
 	front.init("Front.bmp");
-	front.init_texture(g_pd3dDevice, L"wall1.jpg");
-	front.init_texture(g_pd3dDevice, L"wall2.jpg");
-	front.init_texture(g_pd3dDevice, L"floor.jpg");
-	front.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	front.make_big_level_object(g_pd3dDevice);
 
 	back.init("Back.bmp");
-	back.init_texture(g_pd3dDevice, L"wall1.jpg");
-	back.init_texture(g_pd3dDevice, L"wall2.jpg");
-	back.init_texture(g_pd3dDevice, L"floor.jpg");
-	back.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	back.make_big_level_object(g_pd3dDevice);
-	*/
+	
 
 	rocket_position = XMFLOAT3(0, 0, ROCKETRADIUS);
 
@@ -1433,19 +1403,35 @@ void Render()
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	//level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(72, 76, 0);
+	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+
+	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-76, 72, 0);
+	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-4, 148, 0);
+	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -4, 152);
+	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -4, 0);
+	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
 	
-	/*bottom.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	top.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	rightSide.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	leftSide.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	front.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	back.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
+	/*bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 	*/
 
 	
