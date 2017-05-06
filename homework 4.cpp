@@ -63,6 +63,8 @@ ID3D11BlendState*					g_BlendState;
 ID3D11Buffer*                       g_pCBuffer = NULL;
 music_								music;
 ID3D11ShaderResourceView*           g_pTextureRV = NULL;
+ID3D11ShaderResourceView*           g_pTextureGun = NULL;
+ID3D11ShaderResourceView*           g_pTextureBullets = NULL;
 ID3D11ShaderResourceView*           g_pTextureEnemy = NULL;
 ID3D11ShaderResourceView*           g_pTextureA = NULL;
 ID3D11ShaderResourceView*			g_pTextureammodrop = NULL;
@@ -486,11 +488,20 @@ HRESULT InitDevice()
 	if (FAILED(hr))
 		return hr;
 
-
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"m4_tex.jpg", NULL, NULL, &g_pTextureRV, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"ceiling.jpg", NULL, NULL, &g_pTextureRV, NULL);
 	if (FAILED(hr))
 		return hr;
+	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"carbon.jpg", NULL, NULL, &g_pTextureBullets, NULL);
+	if (FAILED(hr))
+		return hr;
+
+	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"m4_tex.jpg", NULL, NULL, &g_pTextureGun, NULL);
+	if (FAILED(hr))
+		return hr;
+
 	// Load the Texture
 	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"zombie.jpg", NULL, NULL, &g_pTextureEnemy, NULL);
 	if (FAILED(hr))
@@ -1069,8 +1080,8 @@ void ShowAmmo(float x, float y) {
 	g_pImmediateContext->PSSetShader(g_pPixelShader_health, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureBullets);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureBullets);
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_ammo, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
@@ -1323,8 +1334,8 @@ void renderGun() {
 	g_pImmediateContext->PSSetShader(g_pPixelShader, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureGun);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureGun);
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_3ds, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
