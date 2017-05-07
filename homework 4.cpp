@@ -36,13 +36,13 @@ ID3D11Buffer*                       g_pVertexBuffer_drop = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_ = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
 
-int	const								AMMODROPCOUNT = 5;
+int	const								AMMODROPCOUNT = 6;
 billboard							ammodrop[AMMODROPCOUNT];
 
 int	const								ENEMYCOUNT = 5;
 billboard							enemies[ENEMYCOUNT];
 
-int	const								PUCOUNT = 5;
+int	const								PUCOUNT = 10;
 billboard							powerups[PUCOUNT];
 
 float								speedBoostTimmer = 0;
@@ -274,13 +274,13 @@ HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szS
 HRESULT InitDevice()
 {
 	for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-		ammodrop[aa].setPosition(rand() % 101 + (-50), -77, rand() % 50);
+		ammodrop[aa].setPosition(rand() % 149 + (-74), -77, rand() % 149 + (-74));
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
-		powerups[bb].setPosition(rand() % 41 + (-20), -77, rand() % 20);
+		powerups[bb].setPosition(rand() % 149 + (-74), -77, rand() % 149 + (-74));
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
-		enemies[cc].setPosition(rand() % 41 + (-20), -78, rand() % 20);
+		enemies[cc].setPosition(rand() % 149 + (-74), -78, rand() % 149 + (-74));
 	}
 
 
@@ -1286,9 +1286,9 @@ void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //
 	//S = XMMatrixScaling(10, 10, 10);
 	XMMATRIX T, R, R2, M, T_off;
 	T = XMMatrixTranslation(enemy.position.x, enemy.position.y + 0.5, enemy.position.z);
-	T_off = XMMatrixTranslation(0, 1.7, 0);		//OFFSET FROM THE CENTE
+	T_off = XMMatrixTranslation(0, 6.7, 0);		//OFFSET FROM THE CENTE
 	R2 = XMMatrixRotationX(-XM_PIDIV2);
-	XMMATRIX S = XMMatrixScaling(1.2, 0.3, 0.1);
+	XMMATRIX S = XMMatrixScaling(2.2, 1.3, 1.1);
 	XMMATRIX S2 = XMMatrixScaling(0.01*life, 0.006, 0.01);
 
 	XMMATRIX WM;
@@ -1334,9 +1334,27 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 
 	XMMATRIX R = XMMatrixRotationX(-XM_PIDIV2);
 	XMMATRIX RY = XMMatrixRotationY(-XM_PI);
-	XMMATRIX Rlook = XMMatrixRotationY(-cam.rotation.y);
+	
+	
 	XMMATRIX T = XMMatrixTranslation(enemy.position.x, enemy.position.y, enemy.position.z);
-	XMMATRIX M = S*R*RY*Rlook*T;
+	XMMATRIX M, Rlookprev;
+
+	if (enemy.indistance) {
+		
+		if (enemy.angle > -cam.rotation.y) {
+			enemy.angle-= 0.01;
+		}
+		if (enemy.angle < -cam.rotation.y) {
+			enemy.angle += 0.01;
+		}
+		XMMATRIX Rlook = XMMatrixRotationY(enemy.angle);
+		M = S*R*RY*Rlook*T;
+	}
+	else {
+
+		Rlookprev = XMMatrixRotationY(enemy.angle);
+		M = S*R*RY*Rlookprev*T;
+	}
 
 	constantbuffer2.World = XMMatrixTranspose(M);
 	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer2, 0, 0);

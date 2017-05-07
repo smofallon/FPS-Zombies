@@ -94,27 +94,28 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathvector.i
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(518): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(519): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(63): warning C4552: '/': operator has no effect; expected operator with side-effect
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(108): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(108): warning C4100: 'py': unreferenced formal parameter
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(113): warning C4189: 'range': local variable is initialized but not referenced
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(146): warning C4100: 'dy': unreferenced formal parameter
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(146): warning C4100: 'py': unreferenced formal parameter
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(354): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(356): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(358): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(85): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(110): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(110): warning C4100: 'py': unreferenced formal parameter
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(115): warning C4189: 'range': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(152): warning C4100: 'dy': unreferenced formal parameter
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(152): warning C4100: 'py': unreferenced formal parameter
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(360): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(365): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(370): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(411): warning C4018: '>=': signed/unsigned mismatch
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(517): warning C4018: '<': signed/unsigned mismatch
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(522): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(522): note: A non-const reference may only be bound to an lvalue
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(516): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(573): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(558): warning C4100: 'leveldata': unreferenced formal parameter
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(665): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(666): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(667): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(362): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(364): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(366): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(371): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(376): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(417): warning C4018: '>=': signed/unsigned mismatch
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(523): warning C4018: '<': signed/unsigned mismatch
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(528): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(528): note: A non-const reference may only be bound to an lvalue
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(522): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(579): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(564): warning C4100: 'leveldata': unreferenced formal parameter
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(671): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(672): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\groundwork.h(673): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -177,14 +178,14 @@ c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1269): warning C4100: 'y': unreferenced formal parameter
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1269): warning C4100: 'x': unreferenced formal parameter
 c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1319): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1396): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1433): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1432): warning C4189: 'stride': local variable is initialized but not referenced
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1479): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1509): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1593): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1603): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1498): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1497): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1414): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1451): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1450): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1497): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1527): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1611): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1621): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1516): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\andrew\desktop\final project\cst320_final_proj_shooter\homework 4.cpp(1515): warning C4189: 'stride': local variable is initialized but not referenced
 homework 4.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   lecture 8_2010.vcxproj -> C:\Users\Andrew\Desktop\Final Project\CST320_Final_Proj_Shooter\Debug\homework 4.exe

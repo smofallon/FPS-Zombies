@@ -79,8 +79,10 @@ public:
 		scale = 1;
 		attacking = false;
 		refill = false;
+		indistance = false;
 		life = 1.0;
 		transparency = 1;
+		angle = rand() % 4;
 	}
 	void setPosition(float xin, float yin, float zin)
 	{
@@ -97,7 +99,7 @@ public:
 	}
 	XMFLOAT3 position; //obvious
 	float angle;
-	bool attacking, refill;
+	bool attacking, refill, indistance;
 	bool used = false;
 	float life;
 	float scale;		//in case it can grow
@@ -109,9 +111,10 @@ public:
 	{
 		float distance = sqrt(pow(position.x - px, 2) + pow(position.z - pz, 2));
 
-		float speed = .003;
+		float speed = .03;
 		float range = 10;
-		if (distance < 10) {
+		if (distance < 20) {
+			indistance = true;
 			if (position.x <= px) {
 				position.x += speed;
 				
@@ -128,6 +131,9 @@ public:
 				position.z -= speed;
 							}
 			
+		}
+		else {
+			indistance = false;
 		}
 		float enemysize = 2;
 		if (
@@ -577,7 +583,7 @@ public:
 
 		if (sprinting)
 		{
-			sprintspeed = 1.5;
+			sprintspeed = 2.5;
 		}
 		else {
 			sprintspeed = 1;
@@ -585,7 +591,7 @@ public:
 
 		if (boosting)
 		{
-			boostspeed = 2.5;
+			boostspeed = 3.5;
 		}
 		else {
 			boostspeed = 1;
