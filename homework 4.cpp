@@ -72,6 +72,8 @@ ID3D11BlendState*					g_BlendState;
 ID3D11Buffer*                       g_pCBuffer = NULL;
 music_								music;
 ID3D11ShaderResourceView*           g_pTextureRV = NULL;
+ID3D11ShaderResourceView*           g_pTextureGun = NULL;
+ID3D11ShaderResourceView*           g_pTextureBullets = NULL;
 ID3D11ShaderResourceView*           g_pTextureEnemy = NULL;
 ID3D11ShaderResourceView*           g_pTextureA = NULL;
 ID3D11ShaderResourceView*			g_pTextureammodrop = NULL;
@@ -272,13 +274,13 @@ HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szS
 HRESULT InitDevice()
 {
 	for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-		ammodrop[aa].setPosition(rand() % 41 + (-20), -1.5, rand() % 20);
+		ammodrop[aa].setPosition(rand() % 101 + (-50), -77, rand() % 50);
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
-		powerups[bb].setPosition(rand() % 41 + (-20), -1.5, rand() % 20);
+		powerups[bb].setPosition(rand() % 41 + (-20), -77, rand() % 20);
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
-		enemies[cc].setPosition(rand() % 41 + (-20), -1.5, rand() % 20);
+		enemies[cc].setPosition(rand() % 41 + (-20), -78, rand() % 20);
 	}
 
 
@@ -526,11 +528,20 @@ HRESULT InitDevice()
 	if (FAILED(hr))
 		return hr;
 
-
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"m4_tex.jpg", NULL, NULL, &g_pTextureRV, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"ceiling.jpg", NULL, NULL, &g_pTextureRV, NULL);
 	if (FAILED(hr))
 		return hr;
+	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"carbon.jpg", NULL, NULL, &g_pTextureBullets, NULL);
+	if (FAILED(hr))
+		return hr;
+
+	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"m4_tex.jpg", NULL, NULL, &g_pTextureGun, NULL);
+	if (FAILED(hr))
+		return hr;
+
 	// Load the Texture
 	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"zombie.jpg", NULL, NULL, &g_pTextureEnemy, NULL);
 	if (FAILED(hr))
@@ -643,56 +654,26 @@ HRESULT InitDevice()
 	g_pd3dDevice->CreateDepthStencilState(&DS_OFF, &ds_off);
 
 	level1.init("level1.bmp");
-	level1.init_texture(g_pd3dDevice, L"wall1.jpg");
-	level1.init_texture(g_pd3dDevice, L"wall2.jpg");
-	level1.init_texture(g_pd3dDevice, L"floor.jpg");
-	level1.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	level1.make_big_level_object(g_pd3dDevice);
-
-	/*
+	
 	bottom.init("Bottom.bmp");
-	bottom.init_texture(g_pd3dDevice, L"wall1.jpg");
-	bottom.init_texture(g_pd3dDevice, L"wall2.jpg");
-	bottom.init_texture(g_pd3dDevice, L"floor.jpg");
-	bottom.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	bottom.make_big_level_object(g_pd3dDevice);
-
+	
 	top.init("Top.bmp");
-	top.init_texture(g_pd3dDevice, L"wall1.jpg");
-	top.init_texture(g_pd3dDevice, L"wall2.jpg");
-	top.init_texture(g_pd3dDevice, L"floor.jpg");
-	top.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	top.make_big_level_object(g_pd3dDevice);
 
-
 	rightSide.init("Right.bmp");
-	rightSide.init_texture(g_pd3dDevice, L"wall1.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"wall2.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"floor.jpg");
-	rightSide.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	rightSide.make_big_level_object(g_pd3dDevice);
 
 	leftSide.init("Left.bmp");
-	leftSide.init_texture(g_pd3dDevice, L"wall1.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"wall2.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"floor.jpg");
-	leftSide.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	leftSide.make_big_level_object(g_pd3dDevice);
 
 	front.init("Front.bmp");
-	front.init_texture(g_pd3dDevice, L"wall1.jpg");
-	front.init_texture(g_pd3dDevice, L"wall2.jpg");
-	front.init_texture(g_pd3dDevice, L"floor.jpg");
-	front.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	front.make_big_level_object(g_pd3dDevice);
 
 	back.init("Back.bmp");
-	back.init_texture(g_pd3dDevice, L"wall1.jpg");
-	back.init_texture(g_pd3dDevice, L"wall2.jpg");
-	back.init_texture(g_pd3dDevice, L"floor.jpg");
-	back.init_texture(g_pd3dDevice, L"ceiling.jpg");
 	back.make_big_level_object(g_pd3dDevice);
-	*/
+	
 
 	rocket_position = XMFLOAT3(0, 0, ROCKETRADIUS);
 
@@ -876,6 +857,7 @@ BOOL OnCreate(HWND hwnd, CREATESTRUCT FAR* lpCreateStruct)
 	SetCursorPos(midx, midy);
 
 	cam.position.z = -1.5;
+	cam.position.y = 74;
 	return TRUE;
 }
 void OnTimer(HWND hwnd, UINT id)
@@ -1108,8 +1090,9 @@ void ShowAmmo(float x, float y) {
 	g_pImmediateContext->PSSetShader(g_pPixelShader_health, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureammodrop);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureammodrop);
+
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureammohud);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureammohud);
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_ammo, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
@@ -1157,7 +1140,7 @@ billboard DropPU(billboard powerup) {
 
 	//animate_rocket(elapsed);ssssssssss
 	//worldmatrix = enemy.get_matrix_y(view);
-	XMMATRIX S2 = XMMatrixScaling(0.5, 0.5, 0.5);
+	XMMATRIX S2 = XMMatrixScaling(1.0, 1.0, 1.0);
 	XMMATRIX R2 = XMMatrixRotationX(-XM_PIDIV2);
 
 
@@ -1207,7 +1190,7 @@ billboard DropAmmo(billboard ammodrop) {
 
 	//animate_rocket(elapsed);ssssssssss
 	//worldmatrix = enemy.get_matrix_y(view);
-	XMMATRIX S2 = XMMatrixScaling(0.5, 0.5, 0.5);
+	XMMATRIX S2 = XMMatrixScaling(1.0, 1.0, 1.0);
 	XMMATRIX R2 = XMMatrixRotationX(-XM_PIDIV2);
 
 
@@ -1344,7 +1327,7 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	constantbuffer2.CameraPos = XMFLOAT4(cam.position.x, cam.position.y, cam.position.z, 1);
 
 	//animate_rocket(elapsed);ssssssssss
-	XMMATRIX S = XMMatrixScaling(.008, .008, .008);
+	XMMATRIX S = XMMatrixScaling(.03, .03, .03);
 
 
 	//S = XMMatrixScaling(10, 10, 10);
@@ -1374,6 +1357,7 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	if (enemy.attacking) {
 		enemy.attacking = false;
 		//music.play_fx("zombie.wav");
+
 		player_health -= 0.001;
 	}
 	return enemy;
@@ -1433,8 +1417,8 @@ void renderGun() {
 	g_pImmediateContext->PSSetShader(g_pPixelShader, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureGun);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureGun);
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_3ds, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
@@ -1488,7 +1472,7 @@ void renderBullet(float elapsed) {
 	}
 }
 //*******************************************************
-
+float rot = 0;
 void Render()
 {
 	static StopWatchMicro_ stopwatch;
@@ -1547,19 +1531,43 @@ void Render()
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	//level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	if (rot < XM_PIDIV2) {
+		rot += 0.004;
+	}
+	else {
+		rot = XM_PIDIV2;
+	}
+	
+	XMMATRIX rf = XMMatrixRotationZ(rot);
+	worldmatrix = XMMatrixTranslation(0, -74, -76)*rf;
+	bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(72, 2, -76)*rf;
+	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+
+	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-76, -2, -76)*rf;
+	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-4, 74, -76)*rf;
+	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, 76)*rf;
+	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, -76)*rf;
+	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
 	
-	/*bottom.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	top.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	rightSide.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	leftSide.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	front.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
-	back.render_level(g_pImmediateContext, g_pVertexBuffer, &view, &g_Projection, g_pCBuffer);
+	/*bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 	*/
 
 	
