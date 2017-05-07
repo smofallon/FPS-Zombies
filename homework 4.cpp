@@ -805,6 +805,7 @@ BOOL OnCreate(HWND hwnd, CREATESTRUCT FAR* lpCreateStruct)
 	SetCursorPos(midx, midy);
 
 	cam.position.z = -1.5;
+	cam.position.y = 74;
 	return TRUE;
 }
 void OnTimer(HWND hwnd, UINT id)
@@ -1250,7 +1251,7 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	if (enemy.attacking) {
 		enemy.attacking = false;
 		music.play_fx("zombie.wav");
-		player_health -= 0.1;
+		player_health -= 0.001;
 	}
 	return enemy;
 }
@@ -1357,7 +1358,7 @@ void renderBullet(float elapsed) {
 	}
 }
 //*******************************************************
-
+float rot = 0;
 void Render()
 {
 	static StopWatchMicro_ stopwatch;
@@ -1404,22 +1405,30 @@ void Render()
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
 	//level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
+	if (rot < XM_PIDIV2) {
+		rot += 0.004;
+	}
+	else {
+		rot = XM_PIDIV2;
+	}
 	
+	XMMATRIX rf = XMMatrixRotationZ(rot);
+	worldmatrix = XMMatrixTranslation(0, -74, -76)*rf;
 	bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(72, 76, 0);
+	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(72, 2, -76)*rf;
 	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-76, 72, 0);
+	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-76, -2, -76)*rf;
 	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 	
-	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-4, 148, 0);
+	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-4, 74, -76)*rf;
 	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 	
-	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -4, 152);
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, 76)*rf;
 	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 	
-	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -4, 0);
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, -76)*rf;
 	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
