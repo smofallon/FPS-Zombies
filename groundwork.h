@@ -128,7 +128,8 @@ public:
 				position.z -= speed;
 							}
 			
-		}		float enemysize = 2;
+		}
+		float enemysize = 2;
 		if (
 			(px >= (position.x - enemysize) && px <= (position.x + enemysize)) &&
 			(pz >= (position.z - enemysize) && pz <= (position.z + enemysize))
@@ -546,7 +547,7 @@ class camera
 private:
 
 public:
-	int w, s, a, d, q, e, sprinting;
+	int w, s, a, d, q, e, sprinting, boosting;
 	XMFLOAT3 position, possible_position;
 	XMFLOAT3 rotation;
 	camera()
@@ -570,32 +571,44 @@ public:
 		XMStoreFloat3(&side, si);
 
 		float speed = elapsed_microseconds / 100000.0;
+		float sprintspeed = 1;
+		float boostspeed = 1;
 		possible_position = position;
 
-		if (w)
-		{
-			possible_position.x -= forward.x * speed;
-			possible_position.z -= forward.z * speed;
-			//possible_position.y -= forward.y * speed;
-		}
 		if (sprinting)
 		{
-			speed = speed * 2;
+			sprintspeed = 1.5;
+		}
+		else {
+			sprintspeed = 1;
+		}
+
+		if (boosting)
+		{
+			boostspeed = 2.5;
+		}
+		else {
+			boostspeed = 1;
+		}
+		if (w)
+		{
+			possible_position.x -= forward.x * speed * sprintspeed * boostspeed;
+			possible_position.z -= forward.z * speed * sprintspeed * boostspeed;
 		}
 		if (s)
 		{
-			possible_position.x += forward.x * speed;
-			possible_position.z += forward.z * speed;
+			possible_position.x += forward.x * speed * sprintspeed  * boostspeed;
+			possible_position.z += forward.z * speed * sprintspeed  * boostspeed;
 		}
 		if (d)
 		{
-			possible_position.x -= side.x * speed;
-			possible_position.z -= side.z * speed;
+			possible_position.x -= side.x * speed * sprintspeed  * boostspeed;
+			possible_position.z -= side.z * speed * sprintspeed  * boostspeed;
 		}
 		if (a)
 		{
-			possible_position.x += side.x * speed;
-			possible_position.z += side.z * speed;
+			possible_position.x += side.x * speed * sprintspeed  * boostspeed;
+			possible_position.z += side.z * speed * sprintspeed  * boostspeed;
 		}
 
 		/*
