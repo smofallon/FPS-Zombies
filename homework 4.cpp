@@ -39,7 +39,7 @@ ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
 int	const								AMMODROPCOUNT = 6;
 billboard							ammodrop[AMMODROPCOUNT];
 
-int	const								ENEMYCOUNT = 5;
+int	const								ENEMYCOUNT = 10;
 billboard							enemies[ENEMYCOUNT];
 
 int	const								PUCOUNT = 10;
@@ -280,7 +280,9 @@ HRESULT InitDevice()
 		powerups[bb].setPosition(rand() % 149 + (-74), -77, rand() % 149 + (-74));
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
-		enemies[cc].setPosition(rand() % 149 + (-74), -78, rand() % 149 + (-74));
+		//-78
+		enemies[cc].setPosition(rand() % 149 + (-74), -90, rand() % 149 + (-74));
+		enemies[cc].used = true;
 	}
 
 
@@ -1114,7 +1116,9 @@ billboard DropPU(billboard powerup) {
 		switch (power)
 		{
 			case 0: // More Health
-				player_health += player_health;
+				if (player_health <= 3.0) {
+					player_health += player_health;
+				}
 				break;
 			case 1: //Speed Boost
 				speedBoostTimmer = 1;
@@ -1316,8 +1320,6 @@ void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //
 }
 
 billboard RenderEnemy(billboard enemy ,float elapsed) {
-	enemy.enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, elapsed * 2);
-
 	UINT stride = sizeof(SimpleVertex);
 	UINT offset = 0;
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1606,6 +1608,7 @@ void Render()
 
 	//////////////// Render Enemies ///////////////
 	for (int num = 0; num < ENEMYCOUNT; num++) {
+		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, elapsed * 2);
 
 		if (!enemies[num].used) {
 			enemies[num] = RenderEnemy(enemies[num], elapsed);

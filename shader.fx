@@ -11,6 +11,7 @@ cbuffer ConstantBuffer : register( b0 )
 matrix World;
 matrix View;
 matrix Projection;
+matrix LightView;
 float4 info;
 float4 CameraPos;
 };

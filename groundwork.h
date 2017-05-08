@@ -32,6 +32,7 @@ public:
 	XMMATRIX View;
 	XMMATRIX Projection;
 	XMFLOAT4 info;
+	XMMATRIX LightView;
 	XMFLOAT4 CameraPos;
 };
 
@@ -110,24 +111,32 @@ public:
 	void enemyanimation(int px, int py, int pz, float elapsed_microseconds)
 	{
 		float distance = sqrt(pow(position.x - px, 2) + pow(position.z - pz, 2));
+		float speed = (rand() % (4 - 1)) / 100.0;
+		float enemysize = 5;
 
-		float speed = .03;
-		float range = 10;
+		if (distance < 30) {
+			if (position.y < -78) {
+				position.y += .1;
+				used = false;
+			}
+		}
+
+
 		if (distance < 20) {
 			indistance = true;
-			if (position.x <= px) {
+			if (position.x <= px - enemysize) {
 				position.x += speed;
 				
 			}
-			if (position.x >= px) {
+			if (position.x >= px + enemysize) {
 				position.x -= speed;
 				
 			}
-			if (position.z <= pz) {
+			if (position.z <= pz - enemysize) {
 				position.z += speed;
 				
 			}
-			if (position.z >= pz) {
+			if (position.z >= pz + enemysize) {
 				position.z -= speed;
 							}
 			
@@ -135,7 +144,6 @@ public:
 		else {
 			indistance = false;
 		}
-		float enemysize = 2;
 		if (
 			(px >= (position.x - enemysize) && px <= (position.x + enemysize)) &&
 			(pz >= (position.z - enemysize) && pz <= (position.z + enemysize))
