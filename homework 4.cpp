@@ -51,6 +51,7 @@ float								unlimitedAmmoTimer = 0;
 bool								playing_sprinting = false;
 float								player_lives = 5.0;
 float								player_health = 1.0;
+float								enemy_health = 1.0;
 static float						player_gun_movement = 1.3;
 int									player_ammo_current = 8;
 int									player_ammo_total = 0;
@@ -1614,6 +1615,32 @@ void Render()
 			enemies[num] = RenderEnemy(enemies[num], elapsed);
 		}
 	}
+
+	bull = new bullet;
+	renderBullet(elapsed);
+
+	float posx = bull->pos.x;
+	float posy = bull->pos.y;
+	float posz = bull->pos.z;
+	float enemx = enemies->position.x;
+	float enemy = enemies->position.y;
+	float enemz = enemies->position.z;
+	float enemy_health[ENEMYCOUNT];
+	for (int i = 0; i < ENEMYCOUNT; i++) {
+		if ((posx == enemx) && (posy == enemy) && (posz == enemz)) {
+			if (posy == (enemy + 30)) {
+				enemy_health[i] -= 1;
+			}
+
+			enemy_health[i] -= .5;
+		}
+
+		if (enemy_health[i] <= 0.0) {
+			enemies[i].used = true;
+		}
+	}
+
+
 	//////////////// Render Player and Info///////////////
 
 	//Generate User Gun
@@ -1621,7 +1648,6 @@ void Render()
 	//Display the User HUD
 	DisplayHUD();
 
-	renderBullet(elapsed);
 
 	//Player health and life
 	if (player_health <= 0.0) {
