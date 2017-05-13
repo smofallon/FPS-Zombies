@@ -65,6 +65,7 @@ int									health_vertex_anz = 2;
 int									ammodrop_vertex_anz = 3;
 int									ammo_vertex_anz = 0;
 int									powerup_vertex_anz = 0;
+int									mapSide = 1;
 
 //states for turning off and on the depth buffer
 ID3D11DepthStencilState				*ds_on, *ds_off;
@@ -275,14 +276,14 @@ HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szS
 HRESULT InitDevice()
 {
 	for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-		ammodrop[aa].setPosition(rand() % 149 + (-74), -77, rand() % 149 + (-74));
+		ammodrop[aa].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
-		powerups[bb].setPosition(rand() % 149 + (-74), -77, rand() % 149 + (-74));
+		powerups[bb].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
 		//-78
-		enemies[cc].setPosition(rand() % 149 + (-74), -90, rand() % 149 + (-74));
+		enemies[cc].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
 		enemies[cc].used = true;
 	}
 
@@ -532,7 +533,7 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"ceiling.jpg", NULL, NULL, &g_pTextureRV, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"ceiling2.jpg", NULL, NULL, &g_pTextureRV, NULL);
 	if (FAILED(hr))
 		return hr;
 	// Load the Texture
@@ -859,8 +860,8 @@ BOOL OnCreate(HWND hwnd, CREATESTRUCT FAR* lpCreateStruct)
 	int midy = (rc.top + rc.bottom) / 2;
 	SetCursorPos(midx, midy);
 
-	cam.position.z = -1.5;
-	cam.position.y = 74;
+	cam.position.z = 70;
+	cam.position.y = 73;
 	return TRUE;
 }
 void OnTimer(HWND hwnd, UINT id)
@@ -1492,8 +1493,8 @@ void renderBullet(float elapsed) {
 		g_pImmediateContext->Draw(12, 0);
 	}
 }
-//*******************************************************
-float rot = 0;
+float rot1 = 0, rot2 = 0, rot3 = 0, rot4 = 0, rot5 = 0;
+float timer = 0;
 void Render()
 {
 	static StopWatchMicro_ stopwatch;
@@ -1527,7 +1528,7 @@ void Render()
 	// Clear the depth buffer to 1.0 (max depth)
 	g_pImmediateContext->ClearDepthStencilView(g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
-	cam.animation(elapsed, bottom.get_bitmap());
+	
 	XMMATRIX view = cam.get_matrix(&g_View);
 
 	XMMATRIX Iview = view;
@@ -1552,44 +1553,105 @@ void Render()
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
-	//level1.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	if (rot < XM_PIDIV2) {
-		rot += 0.004;
-	}
-	else {
-		rot = XM_PIDIV2;
-	}
 	
-	XMMATRIX rf = XMMatrixRotationZ(rot);
-	worldmatrix = XMMatrixTranslation(0, -74, -76)*rf;
+	timer += 0.0001;
+	if (timer >= 5)
+		mapSide = 6;
+	else if (timer >= 4)
+		mapSide = 5;
+	else if (timer >= 3)
+		mapSide = 4;
+	else if (timer >= 2)
+		mapSide = 3;
+	else if (timer >= 1)
+		mapSide = 2;
+
+	if (mapSide == 2) {
+		if (rot1 > -XM_PIDIV2) {
+			rot1 -= 0.004;
+			cam.position.x = 20;
+			cam.position.z = 70;
+		}
+		else
+			rot1 = -XM_PIDIV2;
+	}
+	else if (mapSide == 3) {
+		if (rot2 < XM_PIDIV2) {
+			rot2 += 0.004;
+			cam.position.x = 20;
+			cam.position.z = 70;
+		}
+		else
+			rot2 = XM_PIDIV2;
+	}
+	else if (mapSide == 4) {
+		if (rot3 > -XM_PIDIV2) {
+			rot3 -= 0.004;
+			cam.position.x = 20;
+			cam.position.z = 70;
+		}
+		else
+			rot3 = -XM_PIDIV2;
+	}
+	else if (mapSide == 5) {
+		if (rot4 < XM_PIDIV2) {
+			rot4 += 0.004;
+			cam.position.x = -70;
+			cam.position.z = 0;
+		}
+		else
+			rot4 = XM_PIDIV2;
+	}
+	else if (mapSide == 6) {
+		if (rot5 > -XM_PIDIV2) {
+			rot5 -= 0.004;
+			cam.position.x = 20;
+			cam.position.z = 70;
+		}
+		else
+			rot5 = -XM_PIDIV2;
+	}
+
+	if (mapSide == 1)
+		cam.animation(elapsed, bottom.get_bitmap());
+	else if (mapSide == 2)
+		cam.animation(elapsed, rightSide.get_bitmap());
+	else if (mapSide == 3)
+		cam.animation(elapsed, front.get_bitmap());
+	else if (mapSide == 4)
+		cam.animation(elapsed, top.get_bitmap());
+	else if (mapSide == 5)
+		cam.animation(elapsed, leftSide.get_bitmap());
+	else if (mapSide == 6)
+		cam.animation(elapsed, back.get_bitmap());
+
+	XMMATRIX r1 = XMMatrixRotationZ(rot1);
+	XMMATRIX r2 = XMMatrixRotationX(rot2);
+	XMMATRIX r3 = XMMatrixRotationZ(rot3);
+	XMMATRIX r4 = XMMatrixRotationX(rot4);
+	XMMATRIX r5 = XMMatrixRotationZ(rot5);
+
+
+	worldmatrix = XMMatrixTranslation(2, -74, -78)*r1*r2*r3*r4*r5;
 	bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(72, 2, -76)*rf;
+	worldmatrix = XMMatrixRotationZ(XM_PIDIV2)* XMMatrixTranslation(74, 2, -78)*r1*r2*r3*r4*r5;
 	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
-	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-76, -2, -76)*rf;
+	worldmatrix = XMMatrixRotationZ(-XM_PIDIV2)* XMMatrixTranslation(-74, -2, -78)*r1*r2*r3*r4*r5;
 	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	
-	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-4, 74, -76)*rf;
+
+	worldmatrix = XMMatrixRotationZ(XM_PI)* XMMatrixTranslation(-2, 74, -78)*r1*r2*r3*r4*r5;
 	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	
-	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, 76)*rf;
+
+	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(2, -78, 74)*r1*r2*r3*r4*r5;
 	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	
-	worldmatrix = XMMatrixRotationX(-XM_PIDIV2)* XMMatrixTranslation(0, -78, -76)*rf;
+
+	worldmatrix = XMMatrixRotationX(XM_PIDIV2)* XMMatrixTranslation(2, 78, -74)*r1*r2*r3*r4*r5;
 	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-
-	
-	/*bottom.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	top.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	rightSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	leftSide.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	front.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	back.render_level(g_pImmediateContext, &worldmatrix, &view, &g_Projection, g_pCBuffer);
-	*/
 
 	
 	//////////////// Render AmmoDrops ///////////////

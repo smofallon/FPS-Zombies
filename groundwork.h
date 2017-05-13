@@ -608,6 +608,7 @@ public:
 		{
 			possible_position.x -= forward.x * speed * sprintspeed * boostspeed;
 			possible_position.z -= forward.z * speed * sprintspeed * boostspeed;
+			//possible_position.y -= forward.y * speed * sprintspeed * boostspeed;
 		}
 		if (s)
 		{
@@ -625,32 +626,35 @@ public:
 			possible_position.z += side.z * speed * sprintspeed  * boostspeed;
 		}
 
-		/*
-		
-		//*
-		BYTE red, green, blue;
+		BYTE red, red2, red3, red4, green, blue;
 		float x = 0;
 		float z = 0;
 
-		x = (possible_position.x * -0.5) + 20.5;
-		z = (possible_position.z * -0.5) + 0.5;
-
+		x = (possible_position.x * -0.25) + 20.2;
+		z = (possible_position.z * -0.25) + 20.2;
 
 		blue = leveldata->get_pixel((int)x, (int)z, 0);
 		green = leveldata->get_pixel((int)x, (int)z, 1);
 		red = leveldata->get_pixelBounded((int)x, (int)z, 2);
 
+		x = (possible_position.x * -0.25) + 19.8;
+		z = (possible_position.z * -0.25) + 19.8;
 
-		//if (position.x < 39 && position.x > -37) {
-		if (red == 255) {
+		red2 = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		x = (possible_position.x * -0.25) + 20.2;
+		z = (possible_position.z * -0.25) + 19.8;
+
+		red3 = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		x = (possible_position.x * -0.25) + 19.8;
+		z = (possible_position.z * -0.25) + 20.2;
+
+		red4 = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		if (red > 0 && red2 > 0 && red3 > 0 && red4 > 0) {
 			position = possible_position;
 		}
-		else {
-
-		}
-
-		//*/
-		position = possible_position;
 
 	}
 	XMMATRIX get_matrix(XMMATRIX *view)
