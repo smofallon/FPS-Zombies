@@ -609,7 +609,7 @@ public:
 
 		if (sprinting)
 		{
-			sprintspeed = 2.5;
+			sprintspeed = 2;
 		}
 		else {
 			sprintspeed = 1;
@@ -617,7 +617,7 @@ public:
 
 		if (boosting)
 		{
-			boostspeed = 3.5;
+			boostspeed = 2.5;
 		}
 		else {
 			boostspeed = 1;

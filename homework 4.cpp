@@ -31,7 +31,7 @@ ID3D11Buffer*                       g_pVertexBuffer_enemy = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_ammo = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_health = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_drop = NULL;
-
+static float rtime = 0;
 
 ID3D11Buffer*                       g_pVertexBuffer_ = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
@@ -1353,10 +1353,10 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	if (enemy.indistance) {
 		
 		if (enemy.angle > -cam.rotation.y) {
-			enemy.angle-= 0.01;
+			enemy.angle-= 0.05;
 		}
 		if (enemy.angle < -cam.rotation.y) {
-			enemy.angle += 0.01;
+			enemy.angle += 0.05;
 		}
 		XMMATRIX Rlook = XMMatrixRotationY(enemy.angle);
 		M = S*R*RY*Rlook*T;
@@ -1655,6 +1655,35 @@ void Render()
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 	
+
+
+	rtime += elapsed;
+	int mill = 12000;
+	int second = mill * 1000;
+	int minute = second * 6;
+	int roundtime = minute * 2;
+
+
+	//ROUND RESETS ~ every 2 minutes!
+	if (rtime > roundtime) {
+		for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
+			ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+		}
+		for (int bb = 0; bb < PUCOUNT; bb++) {
+			powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+		}
+		for (int cc = 0; cc < ENEMYCOUNT; cc++) {
+			//-78
+			enemies[cc].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
+			enemy_health[cc] = 1.0;
+
+			enemies[cc].used = true;
+		}
+		rtime = 0;
+	}
+
+
+
 	//////////////// Render AmmoDrops ///////////////
 	for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
 		if (!ammodrop[amm].used) {
@@ -1690,6 +1719,12 @@ void Render()
 		if (!enemies[num].used) {
 			enemies[num] = RenderEnemy(enemies[num], elapsed);
 		}
+		else {
+			if (enemy_health[num] <= 0) {
+				enemies[num].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
+				enemy_health[num] = 1.0;
+			}
+		}
 
 		
 	}
@@ -1715,8 +1750,9 @@ void Render()
 	}
 
 
-
-
+	//apply a new billboard
+	
+	
 	//
 	// Present our back buffer to our front buffer
 	//

@@ -69,8 +69,7 @@ float4 PS( PS_INPUT input) : SV_Target
 {
 float4 texture_color = txDiffuse.Sample(samLinear, input.Tex);
 float4 color = texture_color;
-
-float3 LightPosition = float3(0, 30, 10);
+float3 LightPosition = float3(-CameraPos.x, -CameraPos.y, -(CameraPos.z + 5));
 float3 lightDir = normalize(input.WorldPos - LightPosition);
 
 // Note: Non-uniform scaling not supported
@@ -83,8 +82,8 @@ float3 h = normalize(normalize(-CameraPos.xyz - input.WorldPos) - lightDir);
 float SpecularPower = 15;
 float specLighting = pow(saturate(dot(h, input.Norm)), SpecularPower);
 
-color.rgb = texture_color * diffuseLighting + specLighting;
-
+color.rgb = texture_color * diffuseLighting;
+color.rgb /= 2;
 return color;
 }
 
@@ -101,8 +100,14 @@ PS_INPUT VSlevel(VS_INPUTLVL input)
 float4 PSlevel(PS_INPUT input) : SV_Target
 {
 
-	float4 color = txDiffuse.Sample(samLinear, input.Tex.xy);
 	float depth = saturate(input.Pos.z / input.Pos.w);
+
+
+	float4 texture_color = txDiffuse.Sample(samLinear, input.Tex.xy);
+	float4 color = texture_color;
+
+
+	color.rgb /= 4;
 	return color;
 }
 
