@@ -1555,11 +1555,20 @@ void Render()
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
-	
-	timer += 0.001;
+
+
+	/*for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
+		ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+	}
+	for (int bb = 0; bb < PUCOUNT; bb++) {
+		powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+	}*/
+
+	timer += 0.0001;
 	if (timer >= 5) {
 		mapSide = 6;
 	}
+
 	else if (timer >= 4) {
 		mapSide = 5;
 	}
@@ -1703,23 +1712,36 @@ void Render()
 
 		//////////////// Render Enemies ///////////////
 		for (int num = 0; num < ENEMYCOUNT; num++) {
-			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2);
+			
+			if (mapSide == 1)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, bottom.get_bitmap());
+			else if (mapSide == 2)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, rightSide.get_bitmap());
+			else if (mapSide == 3)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, front.get_bitmap());
+			else if (mapSide == 4)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, top.get_bitmap());
+			else if (mapSide == 5)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, leftSide.get_bitmap());
+			else if (mapSide == 6)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, back.get_bitmap());
+			
 
 			if (enemies[num].shot) {
 				bull = NULL;
 			}
-
 			if (!enemies[num].used) {
 				enemies[num] = RenderEnemy(enemies[num], elapsed);
 			}
+
+			
+
 			else {
 				if (enemy_health[num] <= 0) {
 					enemies[num].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
 					enemy_health[num] = 1.0;
 				}
 			}
-
-
 		}
 
 		renderBullet(elapsed);

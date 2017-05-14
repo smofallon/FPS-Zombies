@@ -83,7 +83,6 @@ float SpecularPower = 15;
 float specLighting = pow(saturate(dot(h, input.Norm)), SpecularPower);
 
 color.rgb = texture_color * diffuseLighting;
-color.rgb;
 return color;
 }
 

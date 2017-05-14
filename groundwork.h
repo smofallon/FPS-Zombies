@@ -69,153 +69,8 @@ public:
 	}
 };
 //**********************************
-class billboard
-{
-	float x, y, z, r;
-public:
-	billboard()
-	{
-		x = y = z = r = 0;
-		position = XMFLOAT3(x, y, z);
-		scale = 1;
-		attacking = false;
-		refill = false;
-		indistance = false;
-		life = 1.0;
-		transparency = 1;
-		angle = rand() % 4;
-	}
-	void setPosition(float xin, float yin, float zin)
-	{
-		x = xin;
-		y = yin;
-		z = zin;
-		r = 0;
-		position = XMFLOAT3(xin, yin, zin);
-
-	}
-
-	void setUsed() {
-		used = true;
-	}
-	XMFLOAT3 position; //obvious
-	float angle;
-	bool attacking, refill, indistance;
-	bool used = false;
-	float life;
-	float shot = false;
-	float scale;		//in case it can grow
-	float transparency; //for later use
-
-						//begining the login
-						//Enemy should follow user when within a radius
-	void enemyanimation(int px, int py, int pz, int bx, int by, int bz, float elapsed_microseconds)
-	{
-		float distance = sqrt(pow(position.x - px, 2) + pow(position.z - pz, 2));
-		float speed = (rand() % (9 - 1)) / 100.0;
-		float enemysize = 3;
-
-		if (distance < 30) {
-			if (position.y < -76) {
-				position.y += .1;
-				used = false;
-			}
-		}
 
 
-		if (distance < 30) {
-			indistance = true;
-			if (position.x <= px - enemysize) {
-				position.x += speed;
-				
-			}
-			if (position.x >= px + enemysize) {
-				position.x -= speed;
-				
-			}
-			if (position.z <= pz - enemysize) {
-				position.z += speed;
-				
-			}
-			if (position.z >= pz + enemysize) {
-				position.z -= speed;
-			}
-			
-		}
-		else {
-			indistance = false;
-		}
-		if (
-			(px >= (position.x - enemysize) && px <= (position.x + enemysize)) &&
-			(pz >= (position.z - enemysize) && pz <= (position.z + enemysize))
-			)
-		{
-			attacking = true;
-		}
-		else {
-			attacking = false;
-		}
-
-		//BULLET -> ENEMY COLLISION
-		if (bx && by && bz) {
-			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
-			if (bulldistance < 3) {
-				life -= .5;
-				shot = true;
-			}
-			else {
-				shot = false;
-			}
-			if (life <= 0.0) {
-				used = true;
-			}
-		}
-
-	}
-
-	void ammodropanimation(int px, int py, int pz, int dx, int dy, int dz)
-	{
-		float drop = 1;
-		if (
-			(px >= (dx - drop) && px <= (dx + drop)) &&
-			(pz >= (dz - drop) && pz <= (dz + drop))
-			)
-		{
-			refill = true;
-		}
-		else {
-			refill = false;
-		}
-
-	}
-
-	XMMATRIX get_matrix(XMMATRIX &ViewMatrix)
-	{
-
-		XMMATRIX view, R, T, S;
-		view = ViewMatrix;
-		//eliminate camera translation:
-		view._41 = view._42 = view._43 = 0.0;
-		XMVECTOR det;
-		R = XMMatrixInverse(&det, view);//inverse rotation
-		T = XMMatrixTranslation(position.x, position.y, position.z);
-		S = XMMatrixScaling(scale, scale, scale);
-		return S*R*T;
-	}
-
-	XMMATRIX get_matrix_y(XMMATRIX &ViewMatrix) //enemy-type
-	{
-		XMMATRIX view, R, T, S;
-		view = ViewMatrix;
-		//eliminate camera translation:
-		view._41 = view._42 = view._43 = 0.0;
-		XMVECTOR det;
-		R = XMMatrixInverse(&det, view);//inverse rotation
-		T = XMMatrixTranslation(position.x, position.y, position.z);
-		S = XMMatrixScaling(scale, scale, scale);
-		return S*R*T;
-	}
-};
 //*****************************************
 class bitmap
 {
@@ -571,8 +426,190 @@ public:
 		z = 0;
 	}
 };
+class billboard
+{
+	float x, y, z, r;
+public:
+	billboard()
+	{
+		x = y = z = r = 0;
+		position = XMFLOAT3(x, y, z);
+		scale = 1;
+		attacking = false;
+		refill = false;
+		indistance = false;
+		life = 1.0;
+		transparency = 1;
+		angle = rand() % 4;
+	}
+	void setPosition(float xin, float yin, float zin)
+	{
+		x = xin;
+		y = yin;
+		z = zin;
+		r = 0;
+		position = XMFLOAT3(xin, yin, zin);
+
+	}
+
+	void setUsed() {
+		used = true;
+	}
+	XMFLOAT3 position, possible_position; //obvious
+	float angle;
+	bool attacking, refill, indistance;
+	bool used = false;
+	float life;
+	float shot = false;
+	float scale;		//in case it can grow
+	float transparency; //for later use
+
+						//begining the login
+						//Enemy should follow user when within a radius
+	void enemyanimation(int px, int py, int pz, int bx, int by, int bz, float elapsed_microseconds, bitmap *leveldata)
+	{
+		possible_position = position;
+
+		float distance = sqrt(pow(possible_position.x - px, 2) + pow(possible_position.z - pz, 2));
+		float speed = (rand() % (9 - 1)) / 100.0;
+		float enemysize = 3;
+
+		if (distance < 30) {
+			if (possible_position.y < -76) {
+				possible_position.y += .1;
+				used = false;
+			}
+		}
 
 
+		if (distance < 30) {
+			indistance = true;
+			if (possible_position.x <= px - enemysize) {
+				possible_position.x += speed;
+
+			}
+			if (possible_position.x >= px + enemysize) {
+				possible_position.x -= speed;
+
+			}
+			if (possible_position.z <= pz - enemysize) {
+				possible_position.z += speed;
+
+			}
+			if (possible_position.z >= pz + enemysize) {
+				possible_position.z -= speed;
+			}
+
+		}
+		else {
+			indistance = false;
+		}
+		if (
+			(px >= (possible_position.x - enemysize) && px <= (possible_position.x + enemysize)) &&
+			(pz >= (possible_position.z - enemysize) && pz <= (possible_position.z + enemysize))
+			)
+		{
+			attacking = true;
+		}
+		else {
+			attacking = false;
+		}
+
+		//BULLET -> ENEMY COLLISION
+		if (bx && by && bz) {
+			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
+			if (bulldistance < 3) {
+				life -= .5;
+				shot = true;
+			}
+			else {
+				shot = false;
+			}
+			if (life <= 0.0) {
+				used = true;
+			}
+		}
+
+		BYTE redFront, redBack, redLeft, redRight, green, blue;
+		float x = 0;
+		float z = 0;
+
+		x = (possible_position.x * 0.25) + 20;
+		z = (possible_position.z * 0.25) + 20.2;
+
+		blue = leveldata->get_pixel((int)x, (int)z, 0);
+		green = leveldata->get_pixel((int)x, (int)z, 1);
+		redFront = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		x = (possible_position.x * 0.25) + 20;
+		z = (possible_position.z * 0.25) + 19.8;
+
+		redBack = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		x = (possible_position.x * 0.25) + 20.2;
+		z = (possible_position.z * 0.25) + 20;
+
+		redRight = leveldata->get_pixelBounded((int)x, (int)z, 2);
+
+		x = (possible_position.x * 0.25) + 19.8;
+		z = (possible_position.z * 0.25) + 20;
+
+		redLeft = leveldata->get_pixelBounded((int)x, (int)z, 2);
+		
+		if (redLeft > 0 && redRight > 0 && redFront > 0 && redBack > 0)
+			position = possible_position;
+		else if ((redLeft <= 0 || redRight <= 0) && (redFront > 0 && redBack > 0))
+			position.z = possible_position.z;
+		else if ((redFront <= 0 || redBack <= 0) && (redRight > 0 && redLeft > 0))
+			position.x = possible_position.x;
+		
+
+	}
+
+	void ammodropanimation(int px, int py, int pz, int dx, int dy, int dz)
+	{
+		float drop = 1;
+		if (
+			(px >= (dx - drop) && px <= (dx + drop)) &&
+			(pz >= (dz - drop) && pz <= (dz + drop))
+			)
+		{
+			refill = true;
+		}
+		else {
+			refill = false;
+		}
+
+
+	}
+
+	XMMATRIX get_matrix(XMMATRIX &ViewMatrix)
+	{
+
+		XMMATRIX view, R, T, S;
+		view = ViewMatrix;
+		//eliminate camera translation:
+		view._41 = view._42 = view._43 = 0.0;
+		XMVECTOR det;
+		R = XMMatrixInverse(&det, view);//inverse rotation
+		T = XMMatrixTranslation(position.x, position.y, position.z);
+		S = XMMatrixScaling(scale, scale, scale);
+		return S*R*T;
+	}
+
+	XMMATRIX get_matrix_y(XMMATRIX &ViewMatrix) //enemy-type
+	{
+		XMMATRIX view, R, T, S;
+		view = ViewMatrix;
+		//eliminate camera translation:
+		view._41 = view._42 = view._43 = 0.0;
+		XMVECTOR det;
+		R = XMMatrixInverse(&det, view);//inverse rotation
+		T = XMMatrixTranslation(position.x, position.y, position.z);
+		S = XMMatrixScaling(scale, scale, scale);
+		return S*R*T;
+	}
+};
 
 class camera
 {
