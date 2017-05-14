@@ -159,7 +159,7 @@ public:
 		//BULLET -> ENEMY COLLISION
 		if (bx && by && bz) {
 			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
-			if (bulldistance < 1) {
+			if (bulldistance < 3) {
 				life -= .5;
 				shot = true;
 			}
@@ -702,9 +702,9 @@ public:
 	XMMATRIX getmatrix(float elapsed, XMMATRIX &view)
 	{
 
-		pos.x = pos.x + imp.x *(elapsed / 100000.0);
-		pos.y = pos.y + imp.y *(elapsed / 100000.0);
-		pos.z = pos.z + imp.z *(elapsed / 100000.0);
+		pos.x = pos.x + imp.x *(elapsed / 10000.0);
+		pos.y = pos.y + imp.y *(elapsed / 10000.0);
+		pos.z = pos.z + imp.z *(elapsed / 10000.0);
 
 		XMMATRIX R, T;
 		R = view;

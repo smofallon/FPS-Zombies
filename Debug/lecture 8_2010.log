@@ -190,23 +190,20 @@ c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1426
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1463): warning C4189: 'offset': local variable is initialized but not referenced
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1462): warning C4189: 'stride': local variable is initialized but not referenced
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1509): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1618): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1620): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1622): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1624): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1626): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1628): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1670): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1673): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1677): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1705): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1706): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1707): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1638): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1640): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1642): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1644): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1646): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1648): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1698): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1699): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1700): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1706): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1706): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1713): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1713): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1720): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1724): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1732): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1717): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1725): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1528): warning C4189: 'offset': local variable is initialized but not referenced
 c:\users\andrew\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1527): warning C4189: 'stride': local variable is initialized but not referenced
 homework 4.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification

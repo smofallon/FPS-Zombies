@@ -83,7 +83,7 @@ float SpecularPower = 15;
 float specLighting = pow(saturate(dot(h, input.Norm)), SpecularPower);
 
 color.rgb = texture_color * diffuseLighting;
-color.rgb /= 2;
+color.rgb;
 return color;
 }
 
@@ -107,7 +107,7 @@ float4 PSlevel(PS_INPUT input) : SV_Target
 	float4 color = texture_color;
 
 
-	color.rgb /= 4;
+	color.rgb /= 2;
 	return color;
 }
 

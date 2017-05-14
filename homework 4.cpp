@@ -59,8 +59,8 @@ int									player_ammo_current = 8;
 int									player_ammo_total = 0;
 bool								player_gun_loaded = true;
 bool								player_active_reloading = false;
-int								player_ammo_unlimited = 0;
-
+int									player_ammo_unlimited = 0;
+bool								ratating = false;
 int									model_vertex_anz = 0;
 int									enemy_vertex_anz = 1;
 int									health_vertex_anz = 2;
@@ -1556,62 +1556,82 @@ void Render()
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	
-	//timer += 0.0001;
-	if (timer >= 5)
+	timer += 0.001;
+	if (timer >= 5) {
 		mapSide = 6;
-	else if (timer >= 4)
+	}
+	else if (timer >= 4) {
 		mapSide = 5;
-	else if (timer >= 3)
+	}
+	else if (timer >= 3) {
 		mapSide = 4;
-	else if (timer >= 2)
+	}
+	else if (timer >= 2) {
 		mapSide = 3;
-	else if (timer >= 1)
+	}
+	else if (timer >= 1) {
 		mapSide = 2;
+	}
 
 	if (mapSide == 2) {
 		if (rot1 > -XM_PIDIV2) {
 			rot1 -= 0.004;
 			cam.position.x = 20;
 			cam.position.z = 70;
+			ratating = true;
 		}
-		else
+		else {
 			rot1 = -XM_PIDIV2;
+			ratating = false;
+		}
 	}
 	else if (mapSide == 3) {
 		if (rot2 < XM_PIDIV2) {
 			rot2 += 0.004;
 			cam.position.x = 20;
 			cam.position.z = 70;
+			ratating = true;
 		}
-		else
+		else{
 			rot2 = XM_PIDIV2;
+			ratating = false;
+		}
 	}
 	else if (mapSide == 4) {
 		if (rot3 > -XM_PIDIV2) {
 			rot3 -= 0.004;
 			cam.position.x = 20;
 			cam.position.z = 70;
+			ratating = true;
 		}
-		else
+		else {
 			rot3 = -XM_PIDIV2;
+			ratating = false;
+		}
 	}
 	else if (mapSide == 5) {
 		if (rot4 < XM_PIDIV2) {
 			rot4 += 0.004;
 			cam.position.x = -70;
 			cam.position.z = 0;
+			ratating = true;
 		}
-		else
+		else {
 			rot4 = XM_PIDIV2;
+			ratating = false;
+		}
 	}
 	else if (mapSide == 6) {
 		if (rot5 > -XM_PIDIV2) {
 			rot5 -= 0.004;
 			cam.position.x = 20;
 			cam.position.z = 70;
+			ratating = true;
 		}
-		else
+		else {
 			rot5 = -XM_PIDIV2;
+			ratating = false;
+		}
 	}
 
 	if (mapSide == 1)
@@ -1656,100 +1676,73 @@ void Render()
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 	
 
-
-	rtime += elapsed;
-	int mill = 12000;
-	int second = mill * 1000;
-	int minute = second * 6;
-	int roundtime = minute * 2;
-
-
-	//ROUND RESETS ~ every 2 minutes!
-	if (rtime > roundtime) {
-		for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-			ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
-		}
-		for (int bb = 0; bb < PUCOUNT; bb++) {
-			powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
-		}
-		for (int cc = 0; cc < ENEMYCOUNT; cc++) {
-			//-78
-			enemies[cc].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
-			enemy_health[cc] = 1.0;
-
-			enemies[cc].used = true;
-		}
-		rtime = 0;
-	}
-
-
-
-	//////////////// Render AmmoDrops ///////////////
-	for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
-		if (!ammodrop[amm].used) {
-			ammodrop[amm] = DropAmmo(ammodrop[amm]);
-		}
-	}
-
-	//////////////// Render PowerUp Drops ///////////////
-	for (int pu = 0; pu < PUCOUNT; pu++) {
-		if (!powerups[pu].used) {
-			powerups[pu] = DropPU(powerups[pu]);
-		}
-	}
-
-
-	int bx = NULL, by = NULL, bz = NULL;
-
-	if (bull != NULL) {
-		bx = bull->pos.x;
-		by = bull->pos.y;
-		bz = bull->pos.z;
-	}
-	
-
-	//////////////// Render Enemies ///////////////
-	for (int num = 0; num < ENEMYCOUNT; num++) {
-		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2);
-
-		if (enemies[num].shot) {
-			bull = NULL;
-		}
-
-		if (!enemies[num].used) {
-			enemies[num] = RenderEnemy(enemies[num], elapsed);
-		}
-		else {
-			if (enemy_health[num] <= 0) {
-				enemies[num].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
-				enemy_health[num] = 1.0;
+	if (!ratating) {
+		//////////////// Render AmmoDrops ///////////////
+		for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
+			if (!ammodrop[amm].used) {
+				ammodrop[amm] = DropAmmo(ammodrop[amm]);
 			}
 		}
 
-		
+		//////////////// Render PowerUp Drops ///////////////
+		for (int pu = 0; pu < PUCOUNT; pu++) {
+			if (!powerups[pu].used) {
+				powerups[pu] = DropPU(powerups[pu]);
+			}
+		}
+
+
+		int bx = NULL, by = NULL, bz = NULL;
+
+		if (bull != NULL) {
+			bx = bull->pos.x;
+			by = bull->pos.y;
+			bz = bull->pos.z;
+		}
+
+
+		//////////////// Render Enemies ///////////////
+		for (int num = 0; num < ENEMYCOUNT; num++) {
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2);
+
+			if (enemies[num].shot) {
+				bull = NULL;
+			}
+
+			if (!enemies[num].used) {
+				enemies[num] = RenderEnemy(enemies[num], elapsed);
+			}
+			else {
+				if (enemy_health[num] <= 0) {
+					enemies[num].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
+					enemy_health[num] = 1.0;
+				}
+			}
+
+
+		}
+
+		renderBullet(elapsed);
+
+
+		//////////////// Render Player and Info///////////////
+
+		//Generate User Gun
+		renderGun();
+		//Display the User HUD
+		DisplayHUD();
+
+
+		//Player health and life
+		if (player_health <= 0.0) {
+			player_lives -= 1;
+			player_health = 1.0;
+
+			if (player_lives == 0)
+				PostQuitMessage(0);
+		}
+
 	}
-
-	renderBullet(elapsed);
-
-
-	//////////////// Render Player and Info///////////////
-
-	//Generate User Gun
-	renderGun();
-	//Display the User HUD
-	DisplayHUD();
-
-
-	//Player health and life
-	if (player_health <= 0.0) {
-		player_lives -= 1;
-		player_health = 1.0;
-
-		if (player_lives == 0)
-			PostQuitMessage(0);
-	}
-
-
 	//apply a new billboard
 	
 	
