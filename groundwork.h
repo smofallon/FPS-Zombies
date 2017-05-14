@@ -364,6 +364,8 @@ private:
 					BYTE bottom_red = leveldata.get_pixel(xx, yy - 1, 2);
 					BYTE bottom_green = leveldata.get_pixel(xx, yy - 1, 1);
 
+					init_wall(XMFLOAT3(xx*FULLWALL - x_offset, 0, yy*FULLWALL), 4, texno);
+
 					if (left_red>0 || left_green > 0)//to the left
 						init_wall(XMFLOAT3(xx*FULLWALL - x_offset, 0, yy*FULLWALL), 3, texno);
 					if (right_red>0 || right_green > 0)//to the right

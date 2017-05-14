@@ -100,29 +100,30 @@ c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warnin
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warning C4100: 'py': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'dy': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'py': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(368): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(367): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(370): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(372): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(374): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(379): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(384): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(425): warning C4018: '>=': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(531): warning C4018: '<': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): note: A non-const reference may only be bound to an lvalue
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(530): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(587): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(633): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(634): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(640): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(641): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(645): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(646): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(650): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(651): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(688): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(376): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(381): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(386): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(427): warning C4018: '>=': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(533): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): note: A non-const reference may only be bound to an lvalue
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(532): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(589): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(635): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(636): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(642): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(643): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(647): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(648): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(652): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(689): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(690): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(691): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -305,29 +306,30 @@ c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warnin
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warning C4100: 'py': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'dy': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'py': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(368): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(367): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(370): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(372): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(374): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(379): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(384): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(425): warning C4018: '>=': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(531): warning C4018: '<': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): note: A non-const reference may only be bound to an lvalue
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(530): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(587): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(633): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(634): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(640): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(641): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(645): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(646): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(650): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(651): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(688): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(376): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(381): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(386): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(427): warning C4018: '>=': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(533): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): note: A non-const reference may only be bound to an lvalue
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(532): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(589): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(635): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(636): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(642): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(643): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(647): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(648): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(652): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(689): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(690): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(691): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\load3ds.cpp(152): warning C4456: declaration of 'i' hides previous local declaration
   c:\users\sean\desktop\school\cst320_final_proj_shooter\load3ds.cpp(38): note: see declaration of 'i'
 c:\users\sean\desktop\school\cst320_final_proj_shooter\load3ds.cpp(249): warning C4018: '<': signed/unsigned mismatch
@@ -445,29 +447,30 @@ c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warnin
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(111): warning C4100: 'py': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'dy': unreferenced formal parameter
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(160): warning C4100: 'py': unreferenced formal parameter
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(368): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(367): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(370): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(372): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(374): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(379): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(384): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(425): warning C4018: '>=': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(531): warning C4018: '<': signed/unsigned mismatch
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(536): note: A non-const reference may only be bound to an lvalue
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(530): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(587): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(633): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(634): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(640): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(641): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(645): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(646): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(650): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(651): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(688): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(376): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(381): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(386): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(427): warning C4018: '>=': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(533): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(538): note: A non-const reference may only be bound to an lvalue
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(532): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(589): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(635): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(636): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(642): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(643): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(647): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(648): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(652): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(689): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(690): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\school\cst320_final_proj_shooter\groundwork.h(691): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 c:\users\sean\desktop\school\cst320_final_proj_shooter\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
