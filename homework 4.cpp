@@ -1710,8 +1710,22 @@ void Render()
 
 	//////////////// Render Enemies ///////////////
 	for (int num = 0; num < ENEMYCOUNT; num++) {
-		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2);
 
+		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, bottom.get_bitmap());
+		/*
+		if (mapSide == 1)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, bottom.get_bitmap());
+		else if (mapSide == 2)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, rightSide.get_bitmap());
+		else if (mapSide == 3)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, front.get_bitmap());
+		else if (mapSide == 4)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, top.get_bitmap());
+		else if (mapSide == 5)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, leftSide.get_bitmap());
+		else if (mapSide == 6)
+			enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2, back.get_bitmap());
+		*/
 		if (enemies[num].shot) {
 			bull = NULL;
 		}
