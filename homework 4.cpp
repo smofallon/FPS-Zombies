@@ -1168,8 +1168,10 @@ billboard DropPU(billboard powerup) {
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_drop, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(ammodrop_vertex_anz, 0);
-	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
+	
 
 	return powerup;
 }
@@ -1218,8 +1220,9 @@ billboard DropAmmo(billboard ammodrop) {
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_drop, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(ammodrop_vertex_anz, 0);
-	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
+	
 
 	return ammodrop;
 }
@@ -1372,8 +1375,9 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_enemy, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(enemy_vertex_anz, 0);
-	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
+	
 
 	enemyHealth(T, 0, 0.5, enemy.life, enemy);
 	if (enemy.attacking) {
@@ -1540,13 +1544,6 @@ void Render()
 	XMMATRIX worldmatrix;
 	worldmatrix = XMMatrixIdentity();
 
-	
-	
-
-
-	//XMMATRIX S, T, R, R2;
-	//worldmatrix = .... probably define some other matrices here!
-
 	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
 	g_pImmediateContext->PSSetShader(g_pPixelShader, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
@@ -1652,7 +1649,7 @@ void Render()
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	
 	//////////////// Render AmmoDrops ///////////////
 	for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
