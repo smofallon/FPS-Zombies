@@ -1101,7 +1101,7 @@ void ShowAmmo(float x, float y) {
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
-	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
+	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(ammo_vertex_anz, 0);
 }
 
@@ -1271,7 +1271,7 @@ void playerHealth(float x, float y, float life) {
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
-	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
+	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(ammo_vertex_anz, 0);
 }
 
@@ -1449,7 +1449,7 @@ void renderGun() {
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
-	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
+	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(model_vertex_anz, 0);
 
 }
@@ -1550,6 +1550,7 @@ void Render()
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	
 	//timer += 0.0001;
 	if (timer >= 5)
@@ -1649,7 +1650,6 @@ void Render()
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	
 	//////////////// Render AmmoDrops ///////////////
 	for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
