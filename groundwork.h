@@ -103,26 +103,27 @@ public:
 	bool attacking, refill, indistance;
 	bool used = false;
 	float life;
+	float shot = false;
 	float scale;		//in case it can grow
 	float transparency; //for later use
 
 						//begining the login
 						//Enemy should follow user when within a radius
-	void enemyanimation(int px, int py, int pz, float elapsed_microseconds)
+	void enemyanimation(int px, int py, int pz, int bx, int by, int bz, float elapsed_microseconds)
 	{
 		float distance = sqrt(pow(position.x - px, 2) + pow(position.z - pz, 2));
-		float speed = (rand() % (4 - 1)) / 100.0;
-		float enemysize = 5;
+		float speed = (rand() % (9 - 1)) / 100.0;
+		float enemysize = 3;
 
 		if (distance < 30) {
-			if (position.y < -78) {
+			if (position.y < -76) {
 				position.y += .1;
 				used = false;
 			}
 		}
 
 
-		if (distance < 20) {
+		if (distance < 30) {
 			indistance = true;
 			if (position.x <= px - enemysize) {
 				position.x += speed;
@@ -138,7 +139,7 @@ public:
 			}
 			if (position.z >= pz + enemysize) {
 				position.z -= speed;
-							}
+			}
 			
 		}
 		else {
@@ -153,6 +154,21 @@ public:
 		}
 		else {
 			attacking = false;
+		}
+
+		//BULLET -> ENEMY COLLISION
+		if (bx && by && bz) {
+			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
+			if (bulldistance < 1) {
+				life -= .5;
+				shot = true;
+			}
+			else {
+				shot = false;
+			}
+			if (life <= 0.0) {
+				used = true;
+			}
 		}
 
 	}
@@ -699,6 +715,8 @@ public:
 
 		return R * T;
 	}
+
+	
 };
 
 

@@ -36,14 +36,17 @@ ID3D11Buffer*                       g_pVertexBuffer_drop = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_ = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
 
-int	const								AMMODROPCOUNT = 6;
+int	const								AMMODROPCOUNT = 20;
 billboard							ammodrop[AMMODROPCOUNT];
 
-int	const								ENEMYCOUNT = 10;
+int	const								ENEMYCOUNT = 20;
 billboard							enemies[ENEMYCOUNT];
 
-int	const								PUCOUNT = 10;
+int	const								PUCOUNT = 20;
 billboard							powerups[PUCOUNT];
+
+float								enemy_health[ENEMYCOUNT];
+
 
 float								speedBoostTimmer = 0;
 float								unlimitedAmmoTimer = 0;
@@ -51,7 +54,6 @@ float								unlimitedAmmoTimer = 0;
 bool								playing_sprinting = false;
 float								player_lives = 5.0;
 float								player_health = 1.0;
-float								enemy_health = 1.0;
 static float						player_gun_movement = 1.3;
 int									player_ammo_current = 8;
 int									player_ammo_total = 0;
@@ -276,14 +278,16 @@ HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szS
 HRESULT InitDevice()
 {
 	for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-		ammodrop[aa].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
+		ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
-		powerups[bb].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
+		powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
 		//-78
-		enemies[cc].setPosition(rand() % 149 + (-74), -76, rand() % 149 + (-74));
+		enemies[cc].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
+		enemy_health[cc] = 1.0;
+
 		enemies[cc].used = true;
 	}
 
@@ -1146,7 +1150,7 @@ billboard DropPU(billboard powerup) {
 
 	//animate_rocket(elapsed);ssssssssss
 	//worldmatrix = enemy.get_matrix_y(view);
-	XMMATRIX S2 = XMMatrixScaling(1.0, 1.0, 1.0);
+	XMMATRIX S2 = XMMatrixScaling(.5, .5, .5);
 	XMMATRIX R2 = XMMatrixRotationX(-XM_PIDIV2);
 
 
@@ -1198,7 +1202,7 @@ billboard DropAmmo(billboard ammodrop) {
 
 	//animate_rocket(elapsed);ssssssssss
 	//worldmatrix = enemy.get_matrix_y(view);
-	XMMATRIX S2 = XMMatrixScaling(1.0, 1.0, 1.0);
+	XMMATRIX S2 = XMMatrixScaling(.5, .5, .5);
 	XMMATRIX R2 = XMMatrixRotationX(-XM_PIDIV2);
 
 
@@ -1334,7 +1338,7 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	constantbuffer2.CameraPos = XMFLOAT4(cam.position.x, cam.position.y, cam.position.z, 1);
 
 	//animate_rocket(elapsed);ssssssssss
-	XMMATRIX S = XMMatrixScaling(.03, .03, .03);
+	XMMATRIX S = XMMatrixScaling(.019, .019, .019);
 
 
 	//S = XMMatrixScaling(10, 10, 10);
@@ -1666,38 +1670,31 @@ void Render()
 	}
 
 
+	int bx = NULL, by = NULL, bz = NULL;
+
+	if (bull != NULL) {
+		bx = bull->pos.x;
+		by = bull->pos.y;
+		bz = bull->pos.z;
+	}
+	
+
 	//////////////// Render Enemies ///////////////
 	for (int num = 0; num < ENEMYCOUNT; num++) {
-		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, elapsed * 2);
+		enemies[num].enemyanimation(-cam.position.x, -cam.position.y, -cam.position.z, bx, by, bz, elapsed * 2);
+
+		if (enemies[num].shot) {
+			bull = NULL;
+		}
 
 		if (!enemies[num].used) {
 			enemies[num] = RenderEnemy(enemies[num], elapsed);
 		}
+
+		
 	}
 
-	bull = new bullet;
 	renderBullet(elapsed);
-
-	float posx = bull->pos.x;
-	float posy = bull->pos.y;
-	float posz = bull->pos.z;
-	float enemx = enemies->position.x;
-	float enemy = enemies->position.y;
-	float enemz = enemies->position.z;
-	float enemy_health[ENEMYCOUNT];
-	for (int i = 0; i < ENEMYCOUNT; i++) {
-		if ((posx == enemx) && (posy == enemy) && (posz == enemz)) {
-			if (posy == (enemy + 30)) {
-				enemy_health[i] -= 1;
-			}
-
-			enemy_health[i] -= .5;
-		}
-
-		if (enemy_health[i] <= 0.0) {
-			enemies[i].used = true;
-		}
-	}
 
 
 	//////////////// Render Player and Info///////////////
