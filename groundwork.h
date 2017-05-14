@@ -626,35 +626,39 @@ public:
 			possible_position.z += side.z * speed * sprintspeed  * boostspeed;
 		}
 
-		BYTE red, red2, red3, red4, green, blue;
+		BYTE redFront, redBack, redLeft, redRight, green, blue;
 		float x = 0;
 		float z = 0;
 
-		x = (possible_position.x * -0.25) + 20.2;
+		x = (possible_position.x * -0.25) + 20;
 		z = (possible_position.z * -0.25) + 20.2;
 
 		blue = leveldata->get_pixel((int)x, (int)z, 0);
 		green = leveldata->get_pixel((int)x, (int)z, 1);
-		red = leveldata->get_pixelBounded((int)x, (int)z, 2);
-
-		x = (possible_position.x * -0.25) + 19.8;
+		redFront = leveldata->get_pixelBounded((int)x, (int)z, 2);
+		
+		x = (possible_position.x * -0.25) + 20;
 		z = (possible_position.z * -0.25) + 19.8;
 
-		red2 = leveldata->get_pixelBounded((int)x, (int)z, 2);
-
+		redBack = leveldata->get_pixelBounded((int)x, (int)z, 2);
+		
 		x = (possible_position.x * -0.25) + 20.2;
-		z = (possible_position.z * -0.25) + 19.8;
+		z = (possible_position.z * -0.25) + 20;
 
-		red3 = leveldata->get_pixelBounded((int)x, (int)z, 2);
-
+		redRight = leveldata->get_pixelBounded((int)x, (int)z, 2);
+		
 		x = (possible_position.x * -0.25) + 19.8;
-		z = (possible_position.z * -0.25) + 20.2;
+		z = (possible_position.z * -0.25) + 20;
 
-		red4 = leveldata->get_pixelBounded((int)x, (int)z, 2);
-
-		if (red > 0 && red2 > 0 && red3 > 0 && red4 > 0) {
+		redLeft = leveldata->get_pixelBounded((int)x, (int)z, 2);
+		
+		if (redLeft > 0 && redRight > 0 && redFront > 0 && redBack > 0) 
 			position = possible_position;
-		}
+		else if ((redLeft <= 0 || redRight <= 0) && (redFront > 0 && redBack > 0))
+			position.z = possible_position.z;
+		else if ((redFront <= 0 || redBack <= 0) && (redRight > 0 && redLeft > 0))
+			position.x = possible_position.x;
+		
 
 	}
 	XMMATRIX get_matrix(XMMATRIX *view)

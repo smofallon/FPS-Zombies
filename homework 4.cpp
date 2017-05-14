@@ -1551,7 +1551,7 @@ void Render()
 	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
 	
-	timer += 0.0001;
+	//timer += 0.0001;
 	if (timer >= 5)
 		mapSide = 6;
 	else if (timer >= 4)
