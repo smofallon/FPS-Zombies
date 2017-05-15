@@ -39,7 +39,7 @@ ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
 int	const								AMMODROPCOUNT = 20;
 billboard							ammodrop[AMMODROPCOUNT];
 
-int	const								ENEMYCOUNT = 20;
+int	const								ENEMYCOUNT = 35;
 billboard							enemies[ENEMYCOUNT];
 
 int	const								PUCOUNT = 20;
@@ -47,7 +47,8 @@ billboard							powerups[PUCOUNT];
 
 float								enemy_health[ENEMYCOUNT];
 
-
+int		OverallKills = 0;
+int		levelKills = 0;
 float								speedBoostTimmer = 0;
 float								unlimitedAmmoTimer = 0;
 
@@ -56,7 +57,7 @@ float								player_lives = 5.0;
 float								player_health = 1.0;
 static float						player_gun_movement = 1.3;
 int									player_ammo_current = 8;
-int									player_ammo_total = 0;
+int									player_ammo_total = 16;
 bool								player_gun_loaded = true;
 bool								player_active_reloading = false;
 int									player_ammo_unlimited = 0;
@@ -277,6 +278,7 @@ HRESULT CompileShaderFromFile(WCHAR* szFileName, LPCSTR szEntryPoint, LPCSTR szS
 //--------------------------------------------------------------------------------------
 HRESULT InitDevice()
 {
+	ShowCursor(false);
 	for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
 		ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
@@ -572,7 +574,7 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"crate_armor.jpg", NULL, NULL, &g_pTexturearmordrop, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"crate_health.jpg", NULL, NULL, &g_pTexturearmordrop, NULL);
 	if (FAILED(hr))
 		return hr;
 
@@ -1119,26 +1121,10 @@ billboard DropPU(billboard powerup) {
 	if (powerup.refill) {
 		int power = rand() % 2;
 
-		switch (power)
-		{
-			case 0: // More Health
-				if (player_health <= 3.0) {
-					player_health += player_health;
-				}
-				break;
-			case 1: //Speed Boost
-				speedBoostTimmer = 1;
-				cam.boosting = 1;
-				break;
-			case 2: //Unlimited Ammo
-				player_ammo_current = 8;
-				player_ammo_unlimited = 1;
-				unlimitedAmmoTimer = 1;
-				break;
-			default:break;
-		}
-			powerup.used = true;
-		
+			if (player_health <= 1.0) {
+				player_health += .25;
+				powerup.used = true;
+			}
 	}
 
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1562,29 +1548,36 @@ void Render()
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
 		powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
-	}*/
+	}
+	*/
 
-	timer += 0.0001;
-	if (timer >= 5) {
+
+
+
+
+
+	
+	if (OverallKills == 50) {
 		mapSide = 6;
 	}
-
-	else if (timer >= 4) {
+	else if (OverallKills == 40) {
 		mapSide = 5;
 	}
-	else if (timer >= 3) {
+	else if (OverallKills == 30) {
 		mapSide = 4;
 	}
-	else if (timer >= 2) {
+	else if (OverallKills == 20) {
 		mapSide = 3;
 	}
-	else if (timer >= 1) {
+	else if (OverallKills == 10) {
 		mapSide = 2;
 	}
 
+	float rotspeed = 0.001;
+
 	if (mapSide == 2) {
 		if (rot1 > -XM_PIDIV2) {
-			rot1 -= 0.004;
+			rot1 -= rotspeed;
 			cam.position.x = 20;
 			cam.position.z = 70;
 			ratating = true;
@@ -1596,7 +1589,7 @@ void Render()
 	}
 	else if (mapSide == 3) {
 		if (rot2 < XM_PIDIV2) {
-			rot2 += 0.004;
+			rot2 += rotspeed;
 			cam.position.x = 20;
 			cam.position.z = 70;
 			ratating = true;
@@ -1608,7 +1601,7 @@ void Render()
 	}
 	else if (mapSide == 4) {
 		if (rot3 > -XM_PIDIV2) {
-			rot3 -= 0.004;
+			rot3 -= rotspeed;
 			cam.position.x = 20;
 			cam.position.z = 70;
 			ratating = true;
@@ -1620,7 +1613,7 @@ void Render()
 	}
 	else if (mapSide == 5) {
 		if (rot4 < XM_PIDIV2) {
-			rot4 += 0.004;
+			rot4 += rotspeed;
 			cam.position.x = -70;
 			cam.position.z = 0;
 			ratating = true;
@@ -1632,7 +1625,7 @@ void Render()
 	}
 	else if (mapSide == 6) {
 		if (rot5 > -XM_PIDIV2) {
-			rot5 -= 0.004;
+			rot5 -= rotspeed;
 			cam.position.x = 20;
 			cam.position.z = 70;
 			ratating = true;
@@ -1732,14 +1725,11 @@ void Render()
 			}
 			if (!enemies[num].used) {
 				enemies[num] = RenderEnemy(enemies[num], elapsed);
-			}
-
-			
-
-			else {
-				if (enemy_health[num] <= 0) {
+			}else {
+				if (enemies[num].life <= 0) {
 					enemies[num].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
-					enemy_health[num] = 1.0;
+					enemies[num].life = 1.0;
+					OverallKills++;
 				}
 			}
 		}

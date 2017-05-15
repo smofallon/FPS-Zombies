@@ -518,7 +518,7 @@ public:
 		//BULLET -> ENEMY COLLISION
 		if (bx && by && bz) {
 			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
-			if (bulldistance < 3) {
+			if (bulldistance < 2) {
 				life -= .5;
 				shot = true;
 			}
