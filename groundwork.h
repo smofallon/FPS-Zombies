@@ -460,7 +460,8 @@ public:
 	bool attacking, refill, indistance;
 	bool used = false;
 	float life;
-	float shot = false;
+	bool shot = false;
+	bool spawnup = false;
 	float scale;		//in case it can grow
 	float transparency; //for later use
 
@@ -477,10 +478,10 @@ public:
 		if (distance < 30) {
 			if (possible_position.y < -76) {
 				possible_position.y += .1;
+				spawnup = true;
 				used = false;
 			}
 		}
-
 
 		if (distance < 30) {
 			indistance = true;
