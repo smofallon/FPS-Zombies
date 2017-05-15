@@ -24,8 +24,10 @@ ID3D11DepthStencilView*             g_pDepthStencilView = NULL;
 ID3D11VertexShader*                 g_pVertexShader = NULL;
 ID3D11PixelShader*                  g_pPixelShader = NULL;
 ID3D11PixelShader*                  g_pPixelShader_health = NULL;
+ID3D11PixelShader*                  g_pPixelShader_ch = NULL;
 ID3D11InputLayout*                  g_pVertexLayout = NULL;
 ID3D11Buffer*                       g_pVertexBuffer = NULL;
+ID3D11Buffer*                       g_pVertexBuffer_CH = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_sky = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_enemy = NULL;
 ID3D11Buffer*                       g_pVertexBuffer_ammo = NULL;
@@ -78,6 +80,7 @@ ID3D11Buffer*                       g_pCBuffer = NULL;
 music_								music;
 ID3D11ShaderResourceView*           g_pTextureRV = NULL;
 ID3D11ShaderResourceView*           g_pTextureGun = NULL;
+ID3D11ShaderResourceView*           g_pTextureCH = NULL;
 ID3D11ShaderResourceView*           g_pTextureBullets = NULL;
 ID3D11ShaderResourceView*           g_pTextureEnemy = NULL;
 ID3D11ShaderResourceView*           g_pTextureA = NULL;
@@ -469,6 +472,20 @@ HRESULT InitDevice()
 	pPSBlob->Release();
 	if (FAILED(hr))
 		return hr;
+
+	pPSBlob = NULL;
+	hr = CompileShaderFromFile(L"shader.fx", "PS_CH", "ps_4_0", &pPSBlob);
+	if (FAILED(hr))
+	{
+		MessageBox(NULL,
+			L"The FX file cannot be compiled.  Please run this executable from the directory that contains the FX file.", L"Error", MB_OK);
+		return hr;
+	}
+	//Pixel shader for crosshair
+	hr = g_pd3dDevice->CreatePixelShader(pPSBlob->GetBufferPointer(), pPSBlob->GetBufferSize(), NULL, &g_pPixelShader_ch);
+	pPSBlob->Release();
+	if (FAILED(hr))
+		return hr;
 	//create skybox vertex buffer
 
 
@@ -589,6 +606,10 @@ HRESULT InitDevice()
 	if (FAILED(hr))
 		return hr;
 
+	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"plus.png", NULL, NULL, &g_pTextureCH, NULL);
+	if (FAILED(hr))
+		return hr;
 
 	// Create the sample state
 	D3D11_SAMPLER_DESC sampDesc;
@@ -728,6 +749,7 @@ void CleanupDevice()
 	if (g_pImmediateContext) g_pImmediateContext->ClearState();
 
 	if (g_pSamplerLinear) g_pSamplerLinear->Release();
+	if (g_pTextureCH) g_pTextureCH->Release();
 	if (g_pTextureRV) g_pTextureRV->Release();
 	if (g_pTextureEnemy) g_pTextureEnemy->Release();
 	if (g_pTextureBull) g_pTextureBull->Release();
@@ -735,6 +757,7 @@ void CleanupDevice()
 	if (g_pTextureammodrop) g_pTextureammodrop->Release();
 	if (g_pTexturearmordrop) g_pTexturearmordrop->Release();
 	if (g_pTexturespeeddrop) g_pTexturespeeddrop->Release();
+
 	if (g_pTextureammodrop) g_pTextureammodrop->Release();
 	if (g_pCBuffer) g_pCBuffer->Release();
 	if (g_pVertexBuffer) g_pVertexBuffer->Release();
@@ -1435,7 +1458,7 @@ void renderGun() {
 	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer, 0, 0);
 
 
-	// Render terrain
+	// Render Gun
 	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
 	g_pImmediateContext->PSSetShader(g_pPixelShader, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
@@ -1449,6 +1472,33 @@ void renderGun() {
 	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(model_vertex_anz, 0);
 
+	// Scale Cross-Hair
+	XMMATRIX S1, M1, T2, wm;
+	wm = XMMatrixIdentity();
+	S1 = XMMatrixScaling(1, 1, 1);
+	M1 = S1*wm;
+
+	ConstantBuffer constantbuffer1;
+	constantbuffer1.View = XMMatrixTranspose(view);
+	constantbuffer1.Projection = XMMatrixTranspose(g_Projection);
+	constantbuffer1.CameraPos = XMFLOAT4(cam.position.x, cam.position.y+5, cam.position.z+5, 1);
+
+	constantbuffer1.World = XMMatrixTranspose(M1);
+	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer1, 0, 0);
+
+	// Render Cross-Hair 
+	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
+	g_pImmediateContext->PSSetShader(g_pPixelShader_ch, NULL, 0);
+	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
+	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
+	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+
+	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
+	g_pImmediateContext->Draw(12, 0);
 }
 
 void DisplayHUD() {
@@ -1751,8 +1801,7 @@ void Render()
 
 		//////////////// Render Player and Info///////////////
 
-		//Generate User Gun
-		renderGun();
+		
 		//Display the User HUD
 		DisplayHUD();
 
@@ -1766,8 +1815,9 @@ void Render()
 				PostQuitMessage(0);
 		}
 
+		//Generate User Gun
+		renderGun();
 	}
-	//apply a new billboard
 	
 	
 	//

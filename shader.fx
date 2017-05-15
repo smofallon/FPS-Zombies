@@ -117,3 +117,13 @@ float4 PS_health(PS_INPUT input) : SV_Target
 
 	return color;
 }
+
+float4 PS_CH(PS_INPUT input) : SV_Target
+{
+	return float4 (1,0,0,1);
+//texture_color = txDiffuse.Sample(samLinear, input.Tex);
+//	float4 color = texture_color;
+//
+//	color.rgb = (1, 0, 0);
+//	return color;
+}
