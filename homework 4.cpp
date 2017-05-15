@@ -81,6 +81,7 @@ ID3D11ShaderResourceView*           g_pTextureGun = NULL;
 ID3D11ShaderResourceView*           g_pTextureBullets = NULL;
 ID3D11ShaderResourceView*           g_pTextureEnemy = NULL;
 ID3D11ShaderResourceView*           g_pTextureA = NULL;
+ID3D11ShaderResourceView*           g_pTextureB = NULL;
 ID3D11ShaderResourceView*			g_pTextureammodrop = NULL;
 ID3D11ShaderResourceView*			g_pTextureammohud = NULL;
 ID3D11ShaderResourceView*			g_pTexturearmordrop = NULL;
@@ -564,6 +565,11 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"boxtext2.jpg", NULL, NULL, &g_pTextureB, NULL);
+	if (FAILED(hr))
+		return hr;
+
+	// Load the Texture
 	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"crate_ammo.jpg", NULL, NULL, &g_pTextureammodrop, NULL);
 	if (FAILED(hr))
 		return hr;
@@ -579,7 +585,7 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"smoke.dds", NULL, NULL, &g_pTextureBull, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"bullet.jpg", NULL, NULL, &g_pTextureBull, NULL);
 	if (FAILED(hr))
 		return hr;
 
@@ -1267,6 +1273,7 @@ void playerHealth(float x, float y, float life) {
 
 void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //life between 0 and 1
 {
+	
 	UINT stride = sizeof(SimpleVertex);
 	UINT offset = 0;
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1285,7 +1292,7 @@ void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //
 	//S = XMMatrixScaling(10, 10, 10);
 	XMMATRIX T, R, R2, M, T_off;
 	T = XMMatrixTranslation(enemy.position.x, enemy.position.y + 0.5, enemy.position.z);
-	T_off = XMMatrixTranslation(0, 6.7, 0);		//OFFSET FROM THE CENTE
+	T_off = XMMatrixTranslation(0, 3.8, 0);		//OFFSET FROM THE CENTE
 	R2 = XMMatrixRotationX(-XM_PIDIV2);
 	XMMATRIX S = XMMatrixScaling(2.2, 1.3, 1.1);
 	XMMATRIX S2 = XMMatrixScaling(0.01*life, 0.006, 0.01);
@@ -1304,8 +1311,8 @@ void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //
 	g_pImmediateContext->PSSetShader(g_pPixelShader_health, NULL, 0);
 	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
 	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureA);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureA);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureB);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureB);
 	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer_health, &stride, &offset);
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
@@ -1468,14 +1475,19 @@ void DisplayHUD() {
 void renderBullet(float elapsed) {
 	if (bull != NULL)
 	{
+		g_pImmediateContext->PSSetShader(g_pPixelShader_health, NULL, 0);
 		UINT stride = sizeof(SimpleVertex);
 		UINT offset = 0;
 		XMMATRIX view = cam.get_matrix(&g_View);
 		XMMATRIX worldmatrix;
 		worldmatrix = XMMatrixIdentity();
+		XMMATRIX S = XMMatrixScaling(.04, .1, .1);
+
 
 		ConstantBuffer constantbuffer;
 		worldmatrix = bull->getmatrix(elapsed, view);
+
+		worldmatrix = S*worldmatrix;
 		g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureBull);
 		constantbuffer.World = XMMatrixTranspose(worldmatrix);
 		constantbuffer.View = XMMatrixTranspose(view);
