@@ -1488,7 +1488,7 @@ void renderGun() {
 		}
 
 		zmove = (sin(mov) + 3) / 3 + 0.2;
-		player_gun_movement += 0.03;
+		player_gun_movement += 0.005;
 	}
 
 	T_off = XMMatrixTranslation(0.5, -0.5, zmove);		//OFFSET FROM THE CENTER

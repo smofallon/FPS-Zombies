@@ -472,7 +472,7 @@ public:
 		possible_position = position;
 
 		float distance = sqrt(pow(possible_position.x - px, 2) + pow(possible_position.z - pz, 2));
-		float speed = (rand() % (9 - 1)) / 100.0;
+		float speed = (rand() % (9 - 1)) / 300.0;
 		float enemysize = 3;
 
 		if (distance < 30) {
