@@ -1456,6 +1456,40 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	}
 	return enemy;
 }
+
+void renderCrossHair() {
+	UINT stride = sizeof(SimpleVertex);
+	UINT offset = 0;
+	XMMATRIX view = cam.get_matrix(&g_View);
+
+	// Scale Cross-Hair
+	XMMATRIX S1, M1, R1, T2;
+	S1 = XMMatrixScaling(0.01, 0.01, 0.01);
+	T2 = XMMatrixTranslation(-cam.position.x, -cam.position.y, -cam.position.z +3);
+	M1 = S1*T2;
+
+	ConstantBuffer constantbuffer1;
+	constantbuffer1.View = XMMatrixTranspose(view);
+	constantbuffer1.Projection = XMMatrixTranspose(g_Projection);
+	//constantbuffer1.CameraPos = XMFLOAT4(cam.position.x, cam.position.y, cam.position.z, 1);
+
+	constantbuffer1.World = XMMatrixTranspose(M1);
+	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer1, 0, 0);
+
+	// Render Cross-Hair 
+	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
+	g_pImmediateContext->PSSetShader(g_pPixelShader_ch, NULL, 0);
+	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
+	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
+	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+
+	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
+	g_pImmediateContext->Draw(12, 0);
+}
 //*******************************************************
 void renderGun() {
 	UINT stride = sizeof(SimpleVertex);
@@ -1520,33 +1554,8 @@ void renderGun() {
 	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(model_vertex_anz, 0);
 
-	// Scale Cross-Hair
-	XMMATRIX S1, M1, T2, wm;
-	wm = XMMatrixIdentity();
-	S1 = XMMatrixScaling(1, 1, 1);
-	M1 = S1*wm;
 
-	ConstantBuffer constantbuffer1;
-	constantbuffer1.View = XMMatrixTranspose(view);
-	constantbuffer1.Projection = XMMatrixTranspose(g_Projection);
-	constantbuffer1.CameraPos = XMFLOAT4(cam.position.x, cam.position.y+5, cam.position.z+5, 1);
-
-	constantbuffer1.World = XMMatrixTranspose(M1);
-	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer1, 0, 0);
-
-	// Render Cross-Hair 
-	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
-	g_pImmediateContext->PSSetShader(g_pPixelShader_ch, NULL, 0);
-	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureCH);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureCH);
-	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
-	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
-	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-
-	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
-	g_pImmediateContext->Draw(12, 0);
+	renderCrossHair();
 }
 
 void DisplayHUD() {
@@ -1897,6 +1906,7 @@ void Render()
 			//Generate User Gun
 			renderGun();
 
+			
 		}
 	}
 	else {

@@ -199,47 +199,45 @@ c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj
 c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'y': unreferenced formal parameter
 c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'x': unreferenced formal parameter
 c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1395): warning C4100: 'elapsed': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1490): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1554): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1553): warning C4189: 'stride': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1605): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1694): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1697): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1712): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1715): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1730): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1733): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1748): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1751): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1765): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1768): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1780): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1782): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1784): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1786): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1788): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1790): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1840): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1841): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1842): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1849): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1849): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1851): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1851): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1853): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1853): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1855): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1855): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1857): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1857): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1859): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1859): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1524): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1563): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1562): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1614): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1703): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1706): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1721): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1724): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1739): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1742): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1757): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1760): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1774): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1777): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1789): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1791): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1793): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1795): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1797): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1799): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1849): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1850): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1851): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
 c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1870): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1877): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1624): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1623): warning C4189: 'stride': local variable is initialized but not referenced
-  LINK : C:\Users\Chris\Desktop\School\Spring2017\CST-320\final_project\CST320_Final_Proj_Shooter\Debug\homework 4.exe not found or not built by the last incremental link; performing full link
-homework 4.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1868): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1868): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1875): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1879): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1886): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1633): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1632): warning C4189: 'stride': local variable is initialized but not referenced
   lecture 8_2010.vcxproj -> C:\Users\Chris\Desktop\School\Spring2017\CST-320\final_project\CST320_Final_Proj_Shooter\Debug\homework 4.exe
   lecture 8_2010.vcxproj -> C:\Users\Chris\Desktop\School\Spring2017\CST-320\final_project\CST320_Final_Proj_Shooter\Debug\homework 4.pdb (Full PDB)
