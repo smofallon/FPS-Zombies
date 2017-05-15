@@ -371,7 +371,6 @@
       </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
-  <ItemGroup />
   <ItemGroup>
     <ClCompile Include="homework 4.cpp" />
     <ClCompile Include="load3ds.cpp" />
