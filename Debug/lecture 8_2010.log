@@ -93,151 +93,151 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathconvert.
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathvector.inl(1269): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(518): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(519): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(64): warning C4552: '/': operator has no effect; expected operator with side-effect
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(238): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(241): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(243): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(245): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(247): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(252): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(257): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(298): warning C4018: '>=': signed/unsigned mismatch
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(404): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(409): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(409): note: A non-const reference may only be bound to an lvalue
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(403): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(443): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(475): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(535): warning C4458: declaration of 'x' hides class member
-  c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(431): note: see declaration of 'billboard::x'
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(536): warning C4458: declaration of 'z' hides class member
-  c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(431): note: see declaration of 'billboard::z'
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(539): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(545): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(546): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(550): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(555): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(556): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(470): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(470): warning C4100: 'py': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(570): warning C4100: 'dy': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(570): warning C4100: 'py': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(643): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(689): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(690): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(696): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(697): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(701): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(702): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(706): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(707): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(743): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(744): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\groundwork.h(745): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(158): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(64): warning C4552: '/': operator has no effect; expected operator with side-effect
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(238): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(241): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(243): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(245): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(247): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(252): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(257): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(298): warning C4018: '>=': signed/unsigned mismatch
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(404): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(409): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(409): note: A non-const reference may only be bound to an lvalue
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(403): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(443): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(475): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(535): warning C4458: declaration of 'x' hides class member
+  c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(431): note: see declaration of 'billboard::x'
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(536): warning C4458: declaration of 'z' hides class member
+  c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(431): note: see declaration of 'billboard::z'
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(539): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(545): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(546): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(550): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(555): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(556): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(470): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(470): warning C4100: 'py': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(570): warning C4100: 'dy': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(570): warning C4100: 'py': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(643): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(689): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(690): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(696): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(697): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(701): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(702): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(706): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(707): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(743): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(744): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\groundwork.h(745): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(158): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wstring.h(121): note: see declaration of 'wcscpy'
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(176): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(176): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_wstring.h(121): note: see declaration of 'wcscpy'
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(205): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\sound.h(214): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(131): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(188): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(287): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(290): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(294): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(789): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'y': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'x': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'fDoubleClick': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'y': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'x': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'fDoubleClick': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'ch': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'y': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'x': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'keyFlags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'y': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'x': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(877): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(878): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(888): warning C4100: 'lpCreateStruct': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(906): warning C4100: 'id': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(906): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'flags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'fDown': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'flags': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'cRepeat': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'fDown': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'hwnd': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1069): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1077): warning C4018: '<': signed/unsigned mismatch
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1096): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1150): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1155): warning C4189: 'power': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1202): warning C4459: declaration of 'ammodrop' hides global declaration
-  c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(41): note: see declaration of 'ammodrop'
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1204): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1278): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1365): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1369): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'y': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'x': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1395): warning C4100: 'elapsed': unreferenced formal parameter
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1524): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1563): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1562): warning C4189: 'stride': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1614): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1703): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1706): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1721): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1724): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1739): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1742): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1757): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1760): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1774): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1777): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1789): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1791): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1793): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1795): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1797): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1799): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1849): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1850): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1851): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1868): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1868): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1875): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1879): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1886): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1633): warning C4189: 'offset': local variable is initialized but not referenced
-c:\users\chris\desktop\school\spring2017\cst-320\final_project\cst320_final_proj_shooter\homework 4.cpp(1632): warning C4189: 'stride': local variable is initialized but not referenced
-  lecture 8_2010.vcxproj -> C:\Users\Chris\Desktop\School\Spring2017\CST-320\final_project\CST320_Final_Proj_Shooter\Debug\homework 4.exe
-  lecture 8_2010.vcxproj -> C:\Users\Chris\Desktop\School\Spring2017\CST-320\final_project\CST320_Final_Proj_Shooter\Debug\homework 4.pdb (Full PDB)
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\sound.h(214): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(131): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(188): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(287): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(290): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(294): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(789): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'fDoubleClick': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(782): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'fDoubleClick': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(813): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'ch': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(820): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(827): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'keyFlags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(835): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(877): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(878): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(888): warning C4100: 'lpCreateStruct': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(906): warning C4100: 'id': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(906): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'flags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'fDown': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(910): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'flags': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'cRepeat': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'fDown': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(936): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1069): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1077): warning C4018: '<': signed/unsigned mismatch
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1096): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1150): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1155): warning C4189: 'power': local variable is initialized but not referenced
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1202): warning C4459: declaration of 'ammodrop' hides global declaration
+  c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(41): note: see declaration of 'ammodrop'
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1204): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1278): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1365): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1369): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'y': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1345): warning C4100: 'x': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1395): warning C4100: 'elapsed': unreferenced formal parameter
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1490): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1561): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1560): warning C4189: 'stride': local variable is initialized but not referenced
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1612): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1701): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1704): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1719): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1722): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1737): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1740): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1755): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1758): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1772): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1775): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1787): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1789): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1791): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1793): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1795): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1797): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1847): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1848): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1849): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1856): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1856): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1858): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1860): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1862): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1864): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1866): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1873): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1877): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1884): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1631): warning C4189: 'offset': local variable is initialized but not referenced
+c:\users\sean\desktop\new folder\cst320_final_proj_shooter\homework 4.cpp(1630): warning C4189: 'stride': local variable is initialized but not referenced
+  lecture 8_2010.vcxproj -> C:\Users\Sean\Desktop\New folder\CST320_Final_Proj_Shooter\Debug\homework 4.exe
+  lecture 8_2010.vcxproj -> C:\Users\Sean\Desktop\New folder\CST320_Final_Proj_Shooter\Debug\homework 4.pdb (Full PDB)

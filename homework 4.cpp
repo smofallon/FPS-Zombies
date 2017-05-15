@@ -612,7 +612,7 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"plus.png", NULL, NULL, &g_pTextureCH, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"cross.png", NULL, NULL, &g_pTextureCH, NULL);
 	if (FAILED(hr))
 		return hr;
 
@@ -697,10 +697,10 @@ HRESULT InitDevice()
 
 	level1.init("level1.bmp");
 	level1.make_big_level_object(g_pd3dDevice);
-	
+
 	bottom.init("Bottom.bmp");
 	bottom.make_big_level_object(g_pd3dDevice);
-	
+
 	top.init("Top.bmp");
 	top.make_big_level_object(g_pd3dDevice);
 
@@ -715,7 +715,7 @@ HRESULT InitDevice()
 
 	back.init("Back.bmp");
 	back.make_big_level_object(g_pd3dDevice);
-	
+
 
 	rocket_position = XMFLOAT3(0, 0, ROCKETRADIUS);
 
@@ -1154,10 +1154,10 @@ billboard DropPU(billboard powerup) {
 	if (powerup.refill) {
 		int power = rand() % 2;
 
-			if (player_health <= 1.0) {
-				player_health += .25;
-				powerup.used = true;
-			}
+		if (player_health <= 1.0) {
+			player_health += .25;
+			powerup.used = true;
+		}
 	}
 
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1194,7 +1194,7 @@ billboard DropPU(billboard powerup) {
 
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(ammodrop_vertex_anz, 0);
-	
+
 
 	return powerup;
 }
@@ -1206,7 +1206,7 @@ billboard DropAmmo(billboard ammodrop) {
 	UINT offset = 0;
 
 	if (ammodrop.refill) {
-		
+
 		player_ammo_total += 8;
 		ammodrop.used = true;
 		reload();
@@ -1245,7 +1245,7 @@ billboard DropAmmo(billboard ammodrop) {
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(ammodrop_vertex_anz, 0);
-	
+
 
 	return ammodrop;
 }
@@ -1309,8 +1309,8 @@ void ENDGAME() {
 	constantbuffer.Projection = XMMatrixTranspose(g_Projection);
 	constantbuffer.CameraPos = XMFLOAT4(cam.position.x, cam.position.y, cam.position.z, 1);
 	//render model:
-	
-	XMMATRIX S = XMMatrixScaling(1, 1 ,1);
+
+	XMMATRIX S = XMMatrixScaling(1, 1, 1);
 
 
 	//S = XMMatrixScaling(10, 10, 10);
@@ -1344,7 +1344,7 @@ void ENDGAME() {
 
 void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //life between 0 and 1
 {
-	
+
 	UINT stride = sizeof(SimpleVertex);
 	UINT offset = 0;
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1392,7 +1392,7 @@ void enemyHealth(XMMATRIX &wm, float x, float y, float life, billboard enemy) //
 	g_pImmediateContext->Draw(ammo_vertex_anz, 0);
 }
 
-billboard RenderEnemy(billboard enemy ,float elapsed) {
+billboard RenderEnemy(billboard enemy, float elapsed) {
 	UINT stride = sizeof(SimpleVertex);
 	UINT offset = 0;
 	XMMATRIX view = cam.get_matrix(&g_View);
@@ -1409,15 +1409,15 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 
 	XMMATRIX R = XMMatrixRotationX(-XM_PIDIV2);
 	XMMATRIX RY = XMMatrixRotationY(-XM_PI);
-	
-	
+
+
 	XMMATRIX T = XMMatrixTranslation(enemy.position.x, enemy.position.y, enemy.position.z);
 	XMMATRIX M, Rlookprev;
 
 	if (enemy.indistance) {
-		
+
 		if (enemy.angle > -cam.rotation.y) {
-			enemy.angle-= 0.05;
+			enemy.angle -= 0.05;
 		}
 		if (enemy.angle < -cam.rotation.y) {
 			enemy.angle += 0.05;
@@ -1445,7 +1445,7 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(enemy_vertex_anz, 0);
-	
+
 
 	enemyHealth(T, 0, 0.5, enemy.life, enemy);
 	if (enemy.attacking) {
@@ -1455,40 +1455,6 @@ billboard RenderEnemy(billboard enemy ,float elapsed) {
 		player_health -= 0.001;
 	}
 	return enemy;
-}
-
-void renderCrossHair() {
-	UINT stride = sizeof(SimpleVertex);
-	UINT offset = 0;
-	XMMATRIX view = cam.get_matrix(&g_View);
-
-	// Scale Cross-Hair
-	XMMATRIX S1, M1, R1, T2;
-	S1 = XMMatrixScaling(0.01, 0.01, 0.01);
-	T2 = XMMatrixTranslation(-cam.position.x, -cam.position.y, -cam.position.z +3);
-	M1 = S1*T2;
-
-	ConstantBuffer constantbuffer1;
-	constantbuffer1.View = XMMatrixTranspose(view);
-	constantbuffer1.Projection = XMMatrixTranspose(g_Projection);
-	//constantbuffer1.CameraPos = XMFLOAT4(cam.position.x, cam.position.y, cam.position.z, 1);
-
-	constantbuffer1.World = XMMatrixTranspose(M1);
-	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer1, 0, 0);
-
-	// Render Cross-Hair 
-	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
-	g_pImmediateContext->PSSetShader(g_pPixelShader_ch, NULL, 0);
-	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
-	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureCH);
-	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureCH);
-	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
-	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
-	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-
-	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
-	g_pImmediateContext->Draw(12, 0);
 }
 //*******************************************************
 void renderGun() {
@@ -1534,7 +1500,10 @@ void renderGun() {
 	XMMATRIX Rxx = XMMatrixRotationZ(.1);			//NOT SURE WHAT YOU WANT TO DO HERE
 	XMMATRIX R_gun = Rxx*Rx*Ry;
 	M = S*R*Rz*T_off*R_gun*T;
-
+	XMMATRIX M1;
+	XMMATRIX t1 = XMMatrixTranslation(0, 0, 5);
+	XMMATRIX R2 = XMMatrixRotationZ(-.1);
+	M1 = S*R2*t1*R_gun*T;
 
 	constantbuffer.World = XMMatrixTranspose(M);
 	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer, 0, 0);
@@ -1554,8 +1523,37 @@ void renderGun() {
 	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
 	g_pImmediateContext->Draw(model_vertex_anz, 0);
 
+	// Scale Cross-Hair
+	/*
+	XMMATRIX S1, M1, T2, wm, rr;
+	wm = XMMatrixIdentity();
+	S1 = XMMatrixScaling(1, 1, 1);
+	rr = XMMatrixRotationY(XM_PI);
+	T = XMMatrixTranspose(rr);
+	M1 = S*R*Rz*T_off*R_gun*T;
+	*/
 
-	renderCrossHair();
+	ConstantBuffer constantbuffer1;
+	constantbuffer1.View = XMMatrixTranspose(view);
+	constantbuffer1.Projection = XMMatrixTranspose(g_Projection);
+	constantbuffer1.CameraPos = XMFLOAT4(cam.position.x, cam.position.y + 5, cam.position.z + 5, 1);
+
+	constantbuffer1.World = XMMatrixTranspose(M1);
+	g_pImmediateContext->UpdateSubresource(g_pCBuffer, 0, NULL, &constantbuffer1, 0, 0);
+
+	// Render Cross-Hair 
+	g_pImmediateContext->VSSetShader(g_pVertexShader, NULL, 0);
+	g_pImmediateContext->PSSetShader(g_pPixelShader_health, NULL, 0);
+	g_pImmediateContext->VSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetConstantBuffers(0, 1, &g_pCBuffer);
+	g_pImmediateContext->PSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureCH);
+	g_pImmediateContext->IASetVertexBuffers(0, 1, &g_pVertexBuffer, &stride, &offset);
+	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
+	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
+
+	g_pImmediateContext->OMSetDepthStencilState(ds_off, 1);
+	g_pImmediateContext->Draw(12, 0);
 }
 
 void DisplayHUD() {
@@ -1614,7 +1612,7 @@ void Render()
 	long elapsed = stopwatch.elapse_micro();
 	stopwatch.start();//restart
 
-	//Timers for powerups
+					  //Timers for powerups
 	if (speedBoostTimmer <= 0) {
 		cam.boosting = 0;
 	}
@@ -1641,7 +1639,7 @@ void Render()
 	// Clear the depth buffer to 1.0 (max depth)
 	g_pImmediateContext->ClearDepthStencilView(g_pDepthStencilView, D3D11_CLEAR_DEPTH, 1.0f, 0);
 
-	
+
 	XMMATRIX view = cam.get_matrix(&g_View);
 
 	XMMATRIX Iview = view;
@@ -1663,10 +1661,10 @@ void Render()
 
 
 	/*for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-		ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+	ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
 	for (int bb = 0; bb < PUCOUNT; bb++) {
-		powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
+	powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
 	*/
 
@@ -1675,7 +1673,7 @@ void Render()
 
 
 
-	
+
 	if (OverallKills == 50) {
 		mapSide = 6;
 	}
@@ -1725,7 +1723,7 @@ void Render()
 			}
 			ratating = true;
 		}
-		else{
+		else {
 			rot2 = XM_PIDIV2;
 			ratating = false;
 		}
@@ -1825,7 +1823,7 @@ void Render()
 
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
-	
+
 	if (OverallKills < 60) {
 		if (!ratating) {
 			//////////////// Render AmmoDrops ///////////////
@@ -1889,7 +1887,7 @@ void Render()
 			//////////////// Render Player and Info///////////////
 
 
-		//Display the User HUD
+			//Display the User HUD
 			DisplayHUD();
 
 
@@ -1906,14 +1904,13 @@ void Render()
 			//Generate User Gun
 			renderGun();
 
-			
 		}
 	}
 	else {
 		ENDGAME();
 	}
-	
-	
+
+
 	//
 	// Present our back buffer to our front buffer
 	//
