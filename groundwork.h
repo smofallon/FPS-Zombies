@@ -455,7 +455,7 @@ public:
 	void setUsed() {
 		used = true;
 	}
-	XMFLOAT3 position, possible_position; //obvious
+	XMFLOAT3 position, possible_position;
 	float angle;
 	bool attacking, refill, indistance;
 	bool used = false;
@@ -472,18 +472,18 @@ public:
 		possible_position = position;
 
 		float distance = sqrt(pow(possible_position.x - px, 2) + pow(possible_position.z - pz, 2));
-		float speed = (rand() % (9 - 1)) / 300.0;
+		float speed = (rand() % (2)) / 200.0;
 		float enemysize = 3;
 
 		if (distance < 30) {
-			if (possible_position.y < -76) {
-				possible_position.y += .1;
-				spawnup = true;
-				used = false;
-			}
+			spawnup = true;
+			used = false;
 		}
-
-		if (distance < 30) {
+		if (spawnup == true && possible_position.y < -76) {
+			possible_position.y += .01;
+		}
+		
+		if (possible_position.y >= -76) {
 			indistance = true;
 			if (possible_position.x <= px - enemysize) {
 				possible_position.x += speed;
@@ -519,8 +519,8 @@ public:
 		//BULLET -> ENEMY COLLISION
 		if (bx && by && bz) {
 			float bulldistance = sqrt(pow(position.x - bx, 2) + pow(position.z - bz, 2));
-			if (bulldistance < 2) {
-				life -= .5;
+			if (bulldistance < 2 && by >= position.y - 1 && by <= position.y + 3) {
+				life -= .57;
 				shot = true;
 			}
 			else {
@@ -625,7 +625,7 @@ public:
 		w = s = a = d = sprinting = 0;
 		position = position = XMFLOAT3(0, 0, 0);
 	}
-	void animation(float elapsed_microseconds, bitmap *leveldata)
+	void animation(float elapsed_microseconds, bitmap *leveldata, float &player_health)
 	{
 		XMMATRIX Ry, Rx, T;
 		Ry = XMMatrixRotationY(-rotation.y);
@@ -640,10 +640,20 @@ public:
 		si = XMVector3TransformCoord(si, Rx*Ry);
 		XMStoreFloat3(&side, si);
 
+		BYTE redFront, redBack, redLeft, redRight, green, blue, specialTile;
+
 		float speed = elapsed_microseconds / 100000.0;
 		float sprintspeed = 1;
 		float boostspeed = 1;
+		float x = 0;
+		float z = 0;
+		float tar = 2.0;
 		possible_position = position;
+
+		x = (possible_position.x * -0.25) + 20;
+		z = (possible_position.z * -0.25) + 20;
+
+		specialTile = leveldata->get_pixelBounded((int)x, (int)z, 2);
 
 		if (sprinting)
 		{
@@ -660,31 +670,59 @@ public:
 		else {
 			boostspeed = 1;
 		}
-		if (w)
-		{
-			possible_position.x -= forward.x * speed * sprintspeed * boostspeed;
-			possible_position.z -= forward.z * speed * sprintspeed * boostspeed;
-			//possible_position.y -= forward.y * speed * sprintspeed * boostspeed;
-		}
-		if (s)
-		{
-			possible_position.x += forward.x * speed * sprintspeed  * boostspeed;
-			possible_position.z += forward.z * speed * sprintspeed  * boostspeed;
-		}
-		if (d)
-		{
-			possible_position.x -= side.x * speed * sprintspeed  * boostspeed;
-			possible_position.z -= side.z * speed * sprintspeed  * boostspeed;
-		}
-		if (a)
-		{
-			possible_position.x += side.x * speed * sprintspeed  * boostspeed;
-			possible_position.z += side.z * speed * sprintspeed  * boostspeed;
-		}
 
-		BYTE redFront, redBack, redLeft, redRight, green, blue;
-		float x = 0;
-		float z = 0;
+
+		if (specialTile == 247) { // lava
+			player_health -= 0.0001;
+		}
+		if (specialTile == 248) { //tar
+
+			if (w)
+			{
+				
+			possible_position.x -= forward.x * speed * boostspeed / tar;
+			possible_position.z -= forward.z * speed * boostspeed / tar;
+			//possible_position.y -= forward.y * speed * boostspeed / tar; // flying
+			}
+			if (s)
+			{
+			possible_position.x += forward.x * speed * boostspeed / tar;
+			possible_position.z += forward.z * speed *  boostspeed / tar;
+			}
+			if (d)
+			{
+			possible_position.x -= side.x * speed * boostspeed / tar;
+			possible_position.z -= side.z * speed * boostspeed / tar;
+			}
+			if (a)
+			{
+			possible_position.x += side.x * speed * boostspeed / tar;
+			possible_position.z += side.z * speed * boostspeed / tar;
+			}
+		}
+		else {
+			if (w)
+			{
+				possible_position.x -= forward.x * speed * sprintspeed * boostspeed;
+				possible_position.z -= forward.z * speed * sprintspeed * boostspeed;
+				//possible_position.y -= forward.y * speed * sprintspeed * boostspeed; // flying
+			}
+			if (s)
+			{
+				possible_position.x += forward.x * speed * sprintspeed  * boostspeed;
+				possible_position.z += forward.z * speed * sprintspeed  * boostspeed;
+			}
+			if (d)
+			{
+				possible_position.x -= side.x * speed * sprintspeed  * boostspeed;
+				possible_position.z -= side.z * speed * sprintspeed  * boostspeed;
+			}
+			if (a)
+			{
+				possible_position.x += side.x * speed * sprintspeed  * boostspeed;
+				possible_position.z += side.z * speed * sprintspeed  * boostspeed;
+			}
+		}
 
 		x = (possible_position.x * -0.25) + 20;
 		z = (possible_position.z * -0.25) + 20.2;
@@ -714,6 +752,7 @@ public:
 			position.z = possible_position.z;
 		else if ((redFront <= 0 || redBack <= 0) && (redRight > 0 && redLeft > 0))
 			position.x = possible_position.x;
+
 		
 
 	}

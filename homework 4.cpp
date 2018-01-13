@@ -40,7 +40,7 @@ ID3D11Buffer*                       g_pVertexBuffer_3ds = NULL;
 int	const								AMMODROPCOUNT = 20;
 billboard							ammodrop[AMMODROPCOUNT];
 
-int	const								ENEMYCOUNT = 35;
+int	const								ENEMYCOUNT = 30;
 billboard							enemies[ENEMYCOUNT];
 
 int	const								PUCOUNT = 20;
@@ -48,21 +48,22 @@ billboard							powerups[PUCOUNT];
 
 float								enemy_health[ENEMYCOUNT];
 
-int		OverallKills = 0;
-int		levelKills = 0;
+int									OverallKills = 0;
+int									levelKills = 0;
 float								speedBoostTimmer = 0;
 float								unlimitedAmmoTimer = 0;
+float								rotspeed = 0.0005;
 
 bool								playing_sprinting = false;
-float								player_lives = 5.0;
-float								player_health = 1.0;
+float								player_lives = 1.0;
+float								player_health = 1.5;
 static float						player_gun_movement = 1.3;
 int									player_ammo_current = 8;
 int									player_ammo_total = 16;
 bool								player_gun_loaded = true;
 bool								player_active_reloading = false;
 int									player_ammo_unlimited = 0;
-bool								ratating = false;
+bool								rotating = false;
 int									model_vertex_anz = 0;
 int									enemy_vertex_anz = 1;
 int									health_vertex_anz = 2;
@@ -70,6 +71,7 @@ int									ammodrop_vertex_anz = 3;
 int									ammo_vertex_anz = 0;
 int									powerup_vertex_anz = 0;
 int									mapSide = 1;
+float									dmgTimer = 0;
 
 //states for turning off and on the depth buffer
 ID3D11DepthStencilState				*ds_on, *ds_off;
@@ -290,14 +292,13 @@ HRESULT InitDevice()
 		powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 	}
 	for (int cc = 0; cc < ENEMYCOUNT; cc++) {
-		//-78
 		enemies[cc].setPosition(rand() % 149 + (-74), -90.5, rand() % 149 + (-74));
 		enemy_health[cc] = 1.0;
 
 		enemies[cc].used = true;
 	}
 
-
+	srand(time(NULL));
 
 	music.set_auto_fadein_fadeout(true);
 	HRESULT hr = S_OK;
@@ -527,11 +528,6 @@ HRESULT InitDevice()
 
 
 	//load model 3ds file
-
-
-	//carrier.3ds
-	//hornet.3ds
-	//f15.3ds
 	Load3DS("M4a1.3ds", g_pd3dDevice, &g_pVertexBuffer_3ds, &model_vertex_anz);
 	Load3DS("zombie.3ds", g_pd3dDevice, &g_pVertexBuffer_enemy, &enemy_vertex_anz);
 	Load3DS("bullet.3ds", g_pd3dDevice, &g_pVertexBuffer_ammo, &ammo_vertex_anz);
@@ -558,7 +554,7 @@ HRESULT InitDevice()
 		return hr;
 
 	// Load the Texture
-	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"ceiling2.jpg", NULL, NULL, &g_pTextureRV, NULL);
+	hr = D3DX11CreateShaderResourceViewFromFile(g_pd3dDevice, L"wall_textures.jpg", NULL, NULL, &g_pTextureRV, NULL);
 	if (FAILED(hr))
 		return hr;
 	// Load the Texture
@@ -694,6 +690,8 @@ HRESULT InitDevice()
 	DS_OFF.DepthEnable = false;
 	g_pd3dDevice->CreateDepthStencilState(&DS_ON, &ds_on);
 	g_pd3dDevice->CreateDepthStencilState(&DS_OFF, &ds_off);
+
+	// Order: bottom, right, front, top, left, back
 
 	level1.init("level1.bmp");
 	level1.make_big_level_object(g_pd3dDevice);
@@ -1446,17 +1444,18 @@ billboard RenderEnemy(billboard enemy, float elapsed) {
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 	g_pImmediateContext->Draw(enemy_vertex_anz, 0);
 
+	dmgTimer += (elapsed/150000.0);
 
 	enemyHealth(T, 0, 0.5, enemy.life, enemy);
-	if (enemy.attacking) {
+	if (enemy.attacking && dmgTimer > 10) {
 		enemy.attacking = false;
-		//music.play_fx("zombie.wav");
-
-		player_health -= 0.001;
+		music.play_fx("punch.mp3");
+		player_health -= 0.15;
+		dmgTimer = 0;
 	}
 	return enemy;
 }
-//*******************************************************
+
 void renderGun() {
 	UINT stride = sizeof(SimpleVertex);
 	UINT offset = 0;
@@ -1484,14 +1483,14 @@ void renderGun() {
 		}
 
 		if (cam.boosting == 1) {
-			mov *= 2;
+			mov *= 1.5;
 		}
 
 		zmove = (sin(mov) + 3) / 3 + 0.2;
 		player_gun_movement += 0.005;
 	}
 
-	T_off = XMMatrixTranslation(0.5, -0.5, zmove);		//OFFSET FROM THE CENTER
+	T_off = XMMatrixTranslation(zmove-1, -0.5, 1.3);		//OFFSET FROM THE CENTER
 	R = XMMatrixRotationX(XM_PIDIV2);
 	XMMATRIX Rz = XMMatrixRotationZ(-XM_PI);
 
@@ -1524,14 +1523,6 @@ void renderGun() {
 	g_pImmediateContext->Draw(model_vertex_anz, 0);
 
 	// Scale Cross-Hair
-	/*
-	XMMATRIX S1, M1, T2, wm, rr;
-	wm = XMMatrixIdentity();
-	S1 = XMMatrixScaling(1, 1, 1);
-	rr = XMMatrixRotationY(XM_PI);
-	T = XMMatrixTranspose(rr);
-	M1 = S*R*Rz*T_off*R_gun*T;
-	*/
 
 	ConstantBuffer constantbuffer1;
 	constantbuffer1.View = XMMatrixTranspose(view);
@@ -1575,8 +1566,6 @@ void DisplayHUD() {
 	playerHealth(-1.0, 0.0, player_health);
 }
 
-
-
 void renderBullet(float elapsed) {
 	if (bull != NULL)
 	{
@@ -1611,6 +1600,8 @@ void Render()
 	static StopWatchMicro_ stopwatch;
 	long elapsed = stopwatch.elapse_micro();
 	stopwatch.start();//restart
+
+	
 
 					  //Timers for powerups
 	if (speedBoostTimmer <= 0) {
@@ -1659,38 +1650,21 @@ void Render()
 	g_pImmediateContext->VSSetShaderResources(0, 1, &g_pTextureRV);
 	g_pImmediateContext->OMSetDepthStencilState(ds_on, 1);
 
-
-	/*for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
-	ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
-	}
-	for (int bb = 0; bb < PUCOUNT; bb++) {
-	powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
-	}
-	*/
-
-
-
-
-
-
-
-	if (OverallKills == 50) {
+	if (OverallKills == 30) {
 		mapSide = 6;
 	}
-	else if (OverallKills == 40) {
+	else if (OverallKills == 24) {
 		mapSide = 5;
 	}
-	else if (OverallKills == 30) {
+	else if (OverallKills == 18) {
 		mapSide = 4;
 	}
-	else if (OverallKills == 20) {
+	else if (OverallKills == 12) {
 		mapSide = 3;
 	}
-	else if (OverallKills == 10) {
+	else if (OverallKills == 6) {
 		mapSide = 2;
 	}
-
-	float rotspeed = 0.001;
 
 	if (mapSide == 2) {
 		if (rot1 > -XM_PIDIV2) {
@@ -1703,29 +1677,29 @@ void Render()
 			for (int bb = 0; bb < PUCOUNT; bb++) {
 				powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
-			ratating = true;
+			rotating = true;
 		}
 		else {
 			rot1 = -XM_PIDIV2;
-			ratating = false;
+			rotating = false;
 		}
 	}
 	else if (mapSide == 3) {
 		if (rot2 < XM_PIDIV2) {
 			rot2 += rotspeed;
-			cam.position.x = 20;
-			cam.position.z = 70;
+			cam.position.x = -70;
+			cam.position.z = 0;
 			for (int aa = 0; aa < AMMODROPCOUNT; aa++) {
 				ammodrop[aa].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
 			for (int bb = 0; bb < PUCOUNT; bb++) {
 				powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
-			ratating = true;
+			rotating = true;
 		}
 		else {
 			rot2 = XM_PIDIV2;
-			ratating = false;
+			rotating = false;
 		}
 	}
 	else if (mapSide == 4) {
@@ -1739,11 +1713,11 @@ void Render()
 			for (int bb = 0; bb < PUCOUNT; bb++) {
 				powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
-			ratating = true;
+			rotating = true;
 		}
 		else {
 			rot3 = -XM_PIDIV2;
-			ratating = false;
+			rotating = false;
 		}
 	}
 	else if (mapSide == 5) {
@@ -1757,11 +1731,11 @@ void Render()
 			for (int bb = 0; bb < PUCOUNT; bb++) {
 				powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
-			ratating = true;
+			rotating = true;
 		}
 		else {
 			rot4 = XM_PIDIV2;
-			ratating = false;
+			rotating = false;
 		}
 	}
 	else if (mapSide == 6) {
@@ -1775,26 +1749,26 @@ void Render()
 				powerups[bb].setPosition(rand() % 149 + (-74), -75.5, rand() % 149 + (-74));
 			}
 			cam.position.z = 70;
-			ratating = true;
+			rotating = true;
 		}
 		else {
 			rot5 = -XM_PIDIV2;
-			ratating = false;
+			rotating = false;
 		}
 	}
 
 	if (mapSide == 1)
-		cam.animation(elapsed, bottom.get_bitmap());
+		cam.animation(elapsed, bottom.get_bitmap(), player_health);
 	else if (mapSide == 2)
-		cam.animation(elapsed, rightSide.get_bitmap());
+		cam.animation(elapsed, rightSide.get_bitmap(), player_health);
 	else if (mapSide == 3)
-		cam.animation(elapsed, front.get_bitmap());
+		cam.animation(elapsed, front.get_bitmap(), player_health);
 	else if (mapSide == 4)
-		cam.animation(elapsed, top.get_bitmap());
+		cam.animation(elapsed, top.get_bitmap(), player_health);
 	else if (mapSide == 5)
-		cam.animation(elapsed, leftSide.get_bitmap());
+		cam.animation(elapsed, leftSide.get_bitmap(), player_health);
 	else if (mapSide == 6)
-		cam.animation(elapsed, back.get_bitmap());
+		cam.animation(elapsed, back.get_bitmap(), player_health);
 
 	XMMATRIX r1 = XMMatrixRotationZ(rot1);
 	XMMATRIX r2 = XMMatrixRotationX(rot2);
@@ -1824,8 +1798,8 @@ void Render()
 	g_pImmediateContext->PSSetSamplers(0, 1, &g_pSamplerLinear);
 	g_pImmediateContext->VSSetSamplers(0, 1, &g_pSamplerLinear);
 
-	if (OverallKills < 60) {
-		if (!ratating) {
+	if (OverallKills < 36) {
+		if (!rotating) {
 			//////////////// Render AmmoDrops ///////////////
 			for (int amm = 0; amm < AMMODROPCOUNT; amm++) {
 				if (!ammodrop[amm].used) {
