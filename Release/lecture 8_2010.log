@@ -92,142 +92,149 @@ c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathconvert.
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathconvert.inl(4832): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(518): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
 c:\program files (x86)\microsoft directx sdk (june 2010)\include\xnamathmisc.inl(519): warning C4838: conversion from 'unsigned int' to 'INT' requires a narrowing conversion
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(64): warning C4552: '/': operator has no effect; expected operator with side-effect
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(238): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(241): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(243): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(245): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(247): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(252): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(257): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(298): warning C4018: '>=': signed/unsigned mismatch
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(404): warning C4018: '<': signed/unsigned mismatch
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(409): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
-  c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(409): note: A non-const reference may only be bound to an lvalue
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(403): warning C4189: 'oo': local variable is initialized but not referenced
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(443): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(475): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(535): warning C4458: declaration of 'x' hides class member
-  c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(431): note: see declaration of 'billboard::x'
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(536): warning C4458: declaration of 'z' hides class member
-  c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(431): note: see declaration of 'billboard::z'
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(539): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(545): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(546): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(550): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(555): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(556): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(470): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(470): warning C4100: 'py': unreferenced formal parameter
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(570): warning C4100: 'dy': unreferenced formal parameter
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(570): warning C4100: 'py': unreferenced formal parameter
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(645): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(654): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(727): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(728): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(734): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(735): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(739): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(740): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(744): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(745): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(782): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(783): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\groundwork.h(784): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(158): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(64): warning C4552: '/': operator has no effect; expected operator with side-effect
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(238): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(241): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(243): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(245): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(247): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(252): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(257): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(298): warning C4018: '>=': signed/unsigned mismatch
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(404): warning C4018: '<': signed/unsigned mismatch
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(409): warning C4239: nonstandard extension used: 'argument': conversion from '_XMMATRIX' to 'XMMATRIX &'
+  c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(409): note: A non-const reference may only be bound to an lvalue
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(403): warning C4189: 'oo': local variable is initialized but not referenced
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(443): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(475): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(535): warning C4458: declaration of 'x' hides class member
+  c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(431): note: see declaration of 'billboard::x'
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(536): warning C4458: declaration of 'z' hides class member
+  c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(431): note: see declaration of 'billboard::z'
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(538): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(539): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(545): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(546): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(550): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(551): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(555): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(556): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(470): warning C4100: 'elapsed_microseconds': unreferenced formal parameter
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(470): warning C4100: 'py': unreferenced formal parameter
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(570): warning C4100: 'dy': unreferenced formal parameter
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(570): warning C4100: 'py': unreferenced formal parameter
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(645): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(653): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(654): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(727): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(728): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(734): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(735): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(739): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(740): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(744): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(745): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(782): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(783): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\groundwork.h(784): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(104): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(158): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\corecrt_wstring.h(123): note: see declaration of 'wcscpy'
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(176): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(176): warning C4996: 'wcscpy': This function or variable may be unsafe. Consider using wcscpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\corecrt_wstring.h(123): note: see declaration of 'wcscpy'
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(205): warning C4018: '<': signed/unsigned mismatch
-c:\users\smofa\desktop\school\game design\unrisen\sound.h(214): warning C4018: '<': signed/unsigned mismatch
-homework 4.cpp(133): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-homework 4.cpp(190): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-homework 4.cpp(289): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(292): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(295): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(301): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-homework 4.cpp(787): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
-homework 4.cpp(780): warning C4100: 'keyFlags': unreferenced formal parameter
-homework 4.cpp(780): warning C4100: 'y': unreferenced formal parameter
-homework 4.cpp(780): warning C4100: 'x': unreferenced formal parameter
-homework 4.cpp(780): warning C4100: 'fDoubleClick': unreferenced formal parameter
-homework 4.cpp(780): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(811): warning C4100: 'keyFlags': unreferenced formal parameter
-homework 4.cpp(811): warning C4100: 'y': unreferenced formal parameter
-homework 4.cpp(811): warning C4100: 'x': unreferenced formal parameter
-homework 4.cpp(811): warning C4100: 'fDoubleClick': unreferenced formal parameter
-homework 4.cpp(811): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(818): warning C4100: 'cRepeat': unreferenced formal parameter
-homework 4.cpp(818): warning C4100: 'ch': unreferenced formal parameter
-homework 4.cpp(818): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(825): warning C4100: 'keyFlags': unreferenced formal parameter
-homework 4.cpp(825): warning C4100: 'y': unreferenced formal parameter
-homework 4.cpp(825): warning C4100: 'x': unreferenced formal parameter
-homework 4.cpp(825): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(833): warning C4100: 'keyFlags': unreferenced formal parameter
-homework 4.cpp(833): warning C4100: 'y': unreferenced formal parameter
-homework 4.cpp(833): warning C4100: 'x': unreferenced formal parameter
-homework 4.cpp(833): warning C4100: 'hwnd': unreferenced formal parameter
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\smofa\desktop\school\game design\new folder\fps-zombies\sound.h(214): warning C4018: '<': signed/unsigned mismatch
+homework 4.cpp(132): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+homework 4.cpp(189): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+homework 4.cpp(288): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(291): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(294): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(300): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+homework 4.cpp(786): warning C4244: '=': conversion from 'double' to 'FLOAT', possible loss of data
+homework 4.cpp(779): warning C4100: 'keyFlags': unreferenced formal parameter
+homework 4.cpp(779): warning C4100: 'y': unreferenced formal parameter
+homework 4.cpp(779): warning C4100: 'x': unreferenced formal parameter
+homework 4.cpp(779): warning C4100: 'fDoubleClick': unreferenced formal parameter
+homework 4.cpp(779): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(810): warning C4100: 'keyFlags': unreferenced formal parameter
+homework 4.cpp(810): warning C4100: 'y': unreferenced formal parameter
+homework 4.cpp(810): warning C4100: 'x': unreferenced formal parameter
+homework 4.cpp(810): warning C4100: 'fDoubleClick': unreferenced formal parameter
+homework 4.cpp(810): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(817): warning C4100: 'cRepeat': unreferenced formal parameter
+homework 4.cpp(817): warning C4100: 'ch': unreferenced formal parameter
+homework 4.cpp(817): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(824): warning C4100: 'keyFlags': unreferenced formal parameter
+homework 4.cpp(824): warning C4100: 'y': unreferenced formal parameter
+homework 4.cpp(824): warning C4100: 'x': unreferenced formal parameter
+homework 4.cpp(824): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(832): warning C4100: 'keyFlags': unreferenced formal parameter
+homework 4.cpp(832): warning C4100: 'y': unreferenced formal parameter
+homework 4.cpp(832): warning C4100: 'x': unreferenced formal parameter
+homework 4.cpp(832): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(874): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 homework 4.cpp(875): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(876): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(886): warning C4100: 'lpCreateStruct': unreferenced formal parameter
-homework 4.cpp(904): warning C4100: 'id': unreferenced formal parameter
-homework 4.cpp(904): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(908): warning C4100: 'flags': unreferenced formal parameter
-homework 4.cpp(908): warning C4100: 'cRepeat': unreferenced formal parameter
-homework 4.cpp(908): warning C4100: 'fDown': unreferenced formal parameter
-homework 4.cpp(908): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(934): warning C4100: 'flags': unreferenced formal parameter
-homework 4.cpp(934): warning C4100: 'cRepeat': unreferenced formal parameter
-homework 4.cpp(934): warning C4100: 'fDown': unreferenced formal parameter
-homework 4.cpp(934): warning C4100: 'hwnd': unreferenced formal parameter
-homework 4.cpp(1067): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(1075): warning C4018: '<': signed/unsigned mismatch
-homework 4.cpp(1094): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(1148): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1153): warning C4189: 'power': local variable is initialized but not referenced
-homework 4.cpp(1200): warning C4459: declaration of 'ammodrop' hides global declaration
+homework 4.cpp(885): warning C4100: 'lpCreateStruct': unreferenced formal parameter
+homework 4.cpp(903): warning C4100: 'id': unreferenced formal parameter
+homework 4.cpp(903): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(907): warning C4100: 'flags': unreferenced formal parameter
+homework 4.cpp(907): warning C4100: 'cRepeat': unreferenced formal parameter
+homework 4.cpp(907): warning C4100: 'fDown': unreferenced formal parameter
+homework 4.cpp(907): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(933): warning C4100: 'flags': unreferenced formal parameter
+homework 4.cpp(933): warning C4100: 'cRepeat': unreferenced formal parameter
+homework 4.cpp(933): warning C4100: 'fDown': unreferenced formal parameter
+homework 4.cpp(933): warning C4100: 'hwnd': unreferenced formal parameter
+homework 4.cpp(1066): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+homework 4.cpp(1074): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1074): error C2228: left of '.size' must have class/struct/union
+  homework 4.cpp(1074): note: type is 'unknown-type'
+homework 4.cpp(1076): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1076): error C2227: left of '->transparency' must point to class/struct/union/generic type
+homework 4.cpp(1077): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1077): error C2227: left of '->scale' must point to class/struct/union/generic type
+homework 4.cpp(1078): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1078): error C2227: left of '->transparency' must point to class/struct/union/generic type
+homework 4.cpp(1080): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1080): error C2228: left of '.erase' must have class/struct/union
+  homework 4.cpp(1080): note: type is 'unknown-type'
+homework 4.cpp(1080): error C2228: left of '.begin' must have class/struct/union
+  homework 4.cpp(1080): note: type is 'unknown-type'
+homework 4.cpp(1093): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+homework 4.cpp(1094): error C2065: 'smokeray': undeclared identifier
+homework 4.cpp(1094): error C2228: left of '.push_back' must have class/struct/union
+  homework 4.cpp(1094): note: type is 'unknown-type'
+homework 4.cpp(1147): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1199): warning C4459: declaration of 'ammodrop' hides global declaration
   homework 4.cpp(41): note: see declaration of 'ammodrop'
-homework 4.cpp(1202): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1276): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-homework 4.cpp(1363): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-homework 4.cpp(1367): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
-homework 4.cpp(1343): warning C4100: 'y': unreferenced formal parameter
-homework 4.cpp(1343): warning C4100: 'x': unreferenced formal parameter
-homework 4.cpp(1447): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(1489): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-homework 4.cpp(1552): warning C4189: 'offset': local variable is initialized but not referenced
-homework 4.cpp(1551): warning C4189: 'stride': local variable is initialized but not referenced
-homework 4.cpp(1601): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
-homework 4.cpp(1675): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1678): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1693): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1696): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1711): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1714): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1729): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1732): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1746): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1749): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1761): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1763): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1201): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1275): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+homework 4.cpp(1362): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+homework 4.cpp(1366): warning C4244: 'argument': conversion from 'double' to 'FLOAT', possible loss of data
+homework 4.cpp(1446): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+homework 4.cpp(1488): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+homework 4.cpp(1605): warning C4244: 'initializing': conversion from 'long double' to 'long', possible loss of data
+homework 4.cpp(1679): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1682): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1697): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1700): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1715): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1718): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1733): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1736): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1750): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1753): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
 homework 4.cpp(1765): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 homework 4.cpp(1767): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 homework 4.cpp(1769): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 homework 4.cpp(1771): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1821): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1822): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1823): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1830): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1830): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1832): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1832): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1773): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1775): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1825): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1826): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1827): warning C4244: '=': conversion from 'FLOAT' to 'int', possible loss of data
 homework 4.cpp(1834): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 homework 4.cpp(1834): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
 homework 4.cpp(1836): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
@@ -236,14 +243,10 @@ homework 4.cpp(1838): warning C4244: 'argument': conversion from 'long' to 'floa
 homework 4.cpp(1838): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
 homework 4.cpp(1840): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
 homework 4.cpp(1840): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
-homework 4.cpp(1847): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1851): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-homework 4.cpp(1858): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
-homework 4.cpp(1622): warning C4189: 'offset': local variable is initialized but not referenced
-homework 4.cpp(1621): warning C4189: 'stride': local variable is initialized but not referenced
-  Generating code
-  1 of 482 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    4 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  lecture 8_2010.vcxproj -> C:\Users\smofa\Desktop\School\Game Design\Unrisen\Release\homework 4.exe
+homework 4.cpp(1842): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1842): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1844): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1844): warning C4244: 'argument': conversion from 'FLOAT' to 'int', possible loss of data
+homework 4.cpp(1851): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data
+homework 4.cpp(1855): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+homework 4.cpp(1862): warning C4244: 'argument': conversion from 'long' to 'float', possible loss of data

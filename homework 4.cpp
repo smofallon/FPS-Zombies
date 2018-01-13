@@ -1490,7 +1490,12 @@ void renderGun() {
 		player_gun_movement += 0.005;
 	}
 
-	T_off = XMMatrixTranslation(zmove-1, -0.5, 1.3);		//OFFSET FROM THE CENTER
+	if (cam.sprinting == 1) {
+		T_off = XMMatrixTranslation(zmove - 1, -0.5, 1.3);		//OFFSET FROM THE CENTER
+	}
+	else {
+		T_off = XMMatrixTranslation(0.5, -0.5, 1.3);
+	}
 	R = XMMatrixRotationX(XM_PIDIV2);
 	XMMATRIX Rz = XMMatrixRotationZ(-XM_PI);
 
